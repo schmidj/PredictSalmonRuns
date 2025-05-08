@@ -1,38 +1,41 @@
-# Bayesian Neural Network for Predicting Recreational Angler Activity
+# Predicting Salmon Runs in three River Systems
 
-This project uses a Bayesian Neural Network (BNN) to model boat counts at lakes based on environmental and socioeconomic predictors.
+This project aims to model and predict salmon returns across different river systems (Fraser River, Bristol Bay, Columbia River) using a combination of biological, environmental, and oceanographic data.
 
-## Motivation
-Understanding and quantifying uncertainty in human-environment interaction is key in ecological management. Traditional models (GLM, RF, SVM, etc.) performed similarly — a BNN was used to incorporate uncertainty explicitly.
+## Project Description
 
-## Highlights
-- Deep learning with TensorFlow Probability
-- Uncertainty-aware predictions
-- Real-world application using angler app data
+Salmon runs are complex ecological events influenced by multiple factors across freshwater and marine environments. 
+This project integrates data from brood tables, return tables, and marine entry records to predict the number of returning salmon for specific rivers and systems.
 
-## Project Structure
-angler-bnn-project/
-├── data/
-│ └── processed/ # Cleaned CSV files
-├── notebooks/
-│ └── 01_bnn_model.ipynb # Main experiment notebook
-├── src/
-│ ├── preprocess.py # Data loading & scaling
-│ ├── model.py # BNN model definition
-│ └── evaluate.py # Plotting with uncertainty
-├── README.md
-└── requirements.txt
+Key components of the project include:
 
-## Folder Overview
-- `data/`: Raw + processed data
-- `src/`: Scripts for preprocessing, modeling, and evaluation
-- `notebooks/`: Training and evaluation notebook
-- `figures/`: Prediction plots with uncertainty
-- `models/`: (Optional) Saved models
+- **Brood Year Analysis**: Tracks the number of juvenile salmon by age class and year.
+- **Return Year Analysis**: Captures observed returns, used to validate recruitment predictions.
+- **First Year at Sea**: Estimates of marine entry and early marine survival by age class.
+- **Environmental Covariates**: Incorporates sea surface temperature, salinity, dissolved oxygen, and large-scale climate indices (e.g., PDO, NPGO, MEI).
+- **Machine Learning Models**: Applied to forecast salmon returns based on prior brood years and environmental drivers.
 
-## How to Run
-1. Install requirements:
-pip install -r requirements.txt
+## Data Sources
 
-2. Run the notebook:
-jupyter notebook notebooks/01_bnn_model.ipynb
+- Angler's Atlas provided brood and return tables (by river and system).
+- Marine entry age-class data.
+- Environmental data from the [pacea R package](https://github.com/pbs-assess/pacea), including:
+  - Oceanographic variables from BCCM and HOTSSea models.
+  - Climatic indices like PDO, NPGO, MEI, etc.
+  - NOAA's OISST sea surface temperatures.
+
+## Goals
+
+- Predict future salmon runs to support fisheries management.
+
+## Tech Stack
+
+- Python (pandas, seaborn, matplotlib, scikit-learn)
+- Jupyter Notebooks
+- R (used to extract and clean data from the `pacea` package)
+- Git & GitHub for version control
+
+
+## Contact
+
+For questions, contact Julia at `schmidj` on GitHub.
