@@ -20,6 +20,9 @@ pancea_df = pd.read_csv(pancea_features)
 # Rename ReturnYear for clarity
 fish_df = fish_df.rename(columns={'ReturnYear': 'Year'})
 
+# Ensure years are sorted before shifting
+fish_df = fish_df.sort_values(by=['System', 'River', 'Year'])
+
 # Create prediction target: next year's Total_Returns
 fish_df['Total_Returns_NextYear'] = fish_df.groupby(['System', 'River'])['Total_Returns'].shift(-1)
 
@@ -104,12 +107,45 @@ print(f"Combined dataset saved to {output_path} with {num_samples} samples and {
 for system in combined_df['System'].unique():
     system_df = combined_df[combined_df['System'] == system].copy()
     system_df = system_df.drop(columns=["System"])
+
+    # Compute correlation matrix for numeric features only
+    numeric_cols = system_df.select_dtypes(include=[np.number]).columns
+    feature_cols = [col for col in numeric_cols]
+    corr_matrix = system_df[feature_cols].corr()
+
+    # Identify highly correlated pairs
+    high_corr_pairs = []
+    for i in range(len(feature_cols)):
+        for j in range(i + 1, len(feature_cols)):
+            corr = corr_matrix.iloc[i, j]
+            if abs(corr) >= 0.9:
+                high_corr_pairs.append((feature_cols[i], feature_cols[j], round(corr, 3)))
+
+    # Print results
+    if high_corr_pairs:
+        print(f"Highly correlated features in {system}:")
+        for feat1, feat2, corr_val in high_corr_pairs:
+            print(f"  {feat1} <--> {feat2}: correlation = {corr_val}")
+    else:
+        print(f"No highly correlated features (|r| ≥ 0.9) found in {system}.")
+
+        
+    # Drop specific correlated features for each system
+    if system == "Columbia River":
+        drop_cols = ['AgeClass_1.2', 'AgeClass_3.3']
+        system_df = system_df.drop(columns=[col for col in drop_cols if col in system_df.columns])
+
+    elif system == "Fraser River":
+        drop_cols = ['AgeClass_1.2', 'Pacea_ALPI_Anomaly']
+        system_df = system_df.drop(columns=[col for col in drop_cols if col in system_df.columns])
+    
+    # Save cleaned file
     system_path = os.path.join(data_dir, f"{system}_FeatureSet_For_Model.csv")
     system_df.to_csv(system_path, index=False)
 
     sys_samples = system_df.shape[0]
-    sys_features = system_df.shape[1] - 1)
+    sys_features = system_df.shape[1] - 1
 
     print(f"{system} dataset saved to {system_path} with {sys_samples} samples and {sys_features} features.")
 
-# %%
+    # %%
