@@ -42,28 +42,20 @@ else:
     print("No constant columns found.")
 
 #%% Correlation matrix
-# Select only numeric columns for correlation
 numeric_df = combined_df.select_dtypes(include=[np.number])
-
-# Compute correlation
 correlation_matrix = numeric_df.corr()
 
-# Set up the matplotlib figure
-plt.figure(figsize=(16, 12))
-
 # Generate the heatmap
+plt.figure(figsize=(16, 12))
 sns.heatmap(correlation_matrix, annot=False, cmap="coolwarm", center=0,
             square=True, linewidths=0.5, cbar_kws={"shrink": 0.75})
-
 plt.title("Correlation Heatmap of Numeric Features", fontsize=16)
 plt.tight_layout()
-
 
 # Identify and print highly correlated feature pairs
 def find_highly_correlated_features(corr_matrix, threshold=0.9):
     correlated_pairs = []
     to_remove = set()
-
     for i in range(len(corr_matrix.columns)):
         for j in range(i):
             col1 = corr_matrix.columns[i]
@@ -72,7 +64,6 @@ def find_highly_correlated_features(corr_matrix, threshold=0.9):
             if abs(corr_value) > threshold:
                 correlated_pairs.append((col1, col2, corr_value))
                 to_remove.add(col2)  # Arbitrarily keep col1 and suggest removing col2
-
     return correlated_pairs, to_remove
 
 high_corr_pairs, features_to_remove = find_highly_correlated_features(correlation_matrix, threshold=0.9)
