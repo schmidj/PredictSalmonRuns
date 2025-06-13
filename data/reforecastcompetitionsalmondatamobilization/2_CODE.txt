@@ -1,0 +1,192 @@
+# SCRIPT TO PROCESS AND REORGANIZE THE STOCK DATA
+
+# For comments/corrections/improvements, contact gottfried.pestal@solv.ca
+
+
+
+# install/load required packages
+
+if(!"tidyverse"%in%installed.packages()[,"Package"]){install.packages("tidyverse")}
+library(tidyverse)
+
+
+# read in source data files:
+brood.df <- read_csv("DATA/1_SourceData/2025_Sk_Intl_Data/Combined_Brood_Bristol_Columbia_Fraser.csv")[-1]
+head(brood.df)
+
+entry.df <- read_csv("DATA/1_SourceData/2025_Sk_Intl_Data/Combined_First_Year_At_Sea.csv")[-1]
+head(entry.df)
+
+return.df <- read_csv("DATA/1_SourceData/2025_Sk_Intl_Data/Combined_Return_Bristol_Columbia_Fraser.csv")[-1]
+head(return.df)
+
+spn.df <- read_csv("DATA/1_SourceData/2025_Sk_Intl_Data/ManuallyExtracted_Spawners_Combined.csv",comment="#")
+  head(spn.df)
+
+if(!dir.exists("OUTPUT")){dir.create("OUTPUT")}
+
+
+age.classes.src <- data.frame(
+  FW_Winters = str_split_i(gsub("AgeClass_","",names(brood.df)[-c(1,2,3,4)]),"\\.",1) %>% as.numeric(),
+  Mar_Winters = str_split_i(gsub("AgeClass_","",names(brood.df)[-c(1,2,3,4)]),"\\.",2) %>% as.numeric() ) %>%
+  mutate(Age = FW_Winters + Mar_Winters + 1) %>%
+  mutate(Euro = paste0(FW_Winters,".",Mar_Winters),
+         GR = paste0(Age,"_",FW_Winters+1)) %>%
+  mutate(Label = paste0("AgeClass_",Euro)) %>%
+  select(Age, everything())
+
+age.classes.src
+
+write_csv(age.classes.src,"DATA/2_Lookup_Files/GENERATED_AgeClass_Lookup.csv")
+
+
+stk.lookup <-brood.df %>% select(System, River) %>% unique()
+write_csv(stk.lookup,
+          "DATA/2_Lookup_Files/GENERATED_Stock_Lookup.csv")
+
+
+
+# revised to start from return file, because 2 issues with current brood year file:
+# - 2024 Bristol Bay returns not showing up 
+# - total recruits calc in source file seems to require all age classes up to age 8 or it is NA 
+#      -> change to using only ages 3-6 to get some extra brood year recruit numbers
+#      -> last brood year for Bristol Bay stocks gets a weird age comp
+#      -> should tweak to do stock-specific age cutoffs
+
+full.data.long.df <- return.df %>% pivot_longer(starts_with("AgeClass_"),names_to = "Label",values_to = "ReturnsByAgeClass") %>% 
+  left_join(age.classes.src,by="Label") %>%
+  mutate(BroodYear = ReturnYear - Age, RecruitsByAgeClass = ReturnsByAgeClass) %>%
+    mutate(MarineEntryYear = BroodYear + FW_Winters + 1 )
+
+total.rec.calc <- full.data.long.df  %>% 
+  dplyr::filter(Age %in% 3:6) %>%
+  group_by(System,River,BroodYear) %>% 
+  summarize(Total_Recruits = sum(RecruitsByAgeClass)) %>% ungroup()
+
+full.data.long.df <- full.data.long.df %>% left_join(total.rec.calc,by = c("System","River","BroodYear") ) %>% 
+      mutate(PercOfBrdYr = round(RecruitsByAgeClass/Total_Recruits*100,2) )  %>%
+      arrange(System, River, BroodYear, Age, Label) %>%
+      left_join(spn.df %>% pivot_longer(2:dim(spn.df)[2],
+                      names_to = "River",values_to = "Total_Spawners_BroodYear") ,
+                by=c("BroodYear","River")) %>%
+      mutate(TotRecPerTotSpn = Total_Recruits/Total_Spawners_BroodYear)
+
+
+head(full.data.long.df)
+
+
+# as per https://stackoverflow.com/questions/72304594/added-commented-section-to-output-csv-with-write-csv
+full.data.filename <- "DATA/3_ProcessedData/GENERATED_FullDataSet_LongForm.csv"
+
+comment.text1 <- paste("# FULL DATA LONG FORMAT FILE")
+comment.text2 <- paste("# Generated from return table")
+comment.text3 <- paste("# NOTE: total recruit calculations use ages 3-6. For last brood years of Bristol Bay stocks total recruits and age comp are incorrect. Need to fix/exclude.")
+comment.text4 <- paste("# NOTE: Total_Spawners_BroodYear column includes total escapement for Bristol Bay stocks; total spawners for Fraser stocks; and Bonneville counts for the Columbia Aggregate")
+
+write_lines(comment.text1, full.data.filename)
+write_lines(comment.text2, full.data.filename, append = TRUE)
+write_lines(comment.text3, full.data.filename, append = TRUE)
+
+full.data.long.df  |> colnames() |> paste0(collapse = ",") |> write_lines(full.data.filename, append = TRUE)
+write_csv(full.data.long.df, full.data.filename , append = TRUE)
+
+
+# Subset SR data set  by brood year
+
+sr.out <- spn.df %>% pivot_longer(2:dim(spn.df)[2], names_to = "River",values_to = "Total_Spawners_BroodYear") %>%
+          left_join(stk.lookup %>% select(River,System), by="River") %>%
+          left_join(full.data.long.df %>% select(River,BroodYear, Total_Recruits,TotRecPerTotSpn) %>% unique(),
+            by=c("BroodYear","River"))  %>% arrange(System, River, BroodYear)  %>%
+          select(System, River, BroodYear, everything())
+head(sr.out)
+
+
+# as per https://stackoverflow.com/questions/72304594/added-commented-section-to-output-csv-with-write-csv
+sr.data.filename <- "DATA/3_ProcessedData/GENERATED_SRDataSet_LongForm.csv"
+
+comment.text1 <- paste("# SR DATA LONG FORMAT FILE")
+comment.text2 <- paste("# Generated from return table and spawner files")
+comment.text3 <- paste("# NOTE: total recruit calculations use ages 3-6. For last brood years of Bristol Bay stocks total recruits and age comp are incorrect. Need to fix/exclude.")
+comment.text4 <- paste("# NOTE: Total_Spawners_BroodYear column includes total escapement for Bristol Bay stocks; total spawners for Fraser stocks; and Bonneville counts for the Columbia Aggregate")
+
+write_lines(comment.text1, sr.data.filename)
+write_lines(comment.text2, sr.data.filename, append = TRUE)
+write_lines(comment.text3, sr.data.filename, append = TRUE)
+
+sr.out |> colnames() |> paste0(collapse = ",") |> write_lines(sr.data.filename, append = TRUE)
+write_csv(sr.out, sr.data.filename , append = TRUE)
+
+
+
+# get range of % age class by brood year
+
+age.comp.details <- full.data.long.df %>% group_by(System,River,Label) %>% 
+      summarize(
+        Perc_Min = quantile(PercOfBrdYr,0,na.rm=TRUE),
+        Perc_p10 = quantile(PercOfBrdYr,0.10,na.rm=TRUE),
+        Perc_p25 = quantile(PercOfBrdYr,0.25,na.rm=TRUE),
+        Perc_Med = quantile(PercOfBrdYr,0.5,na.rm=TRUE),
+        Perc_p75 = quantile(PercOfBrdYr,0.75,na.rm=TRUE),
+        Perc_p90 = quantile(PercOfBrdYr,0.90,na.rm=TRUE),
+        Perc_Max = quantile(PercOfBrdYr,1,na.rm=TRUE),
+        ) %>% left_join(age.classes.src,by="Label")
+head(age.comp.details)
+write_csv(age.comp.details,"DATA/3_ProcessedData/GENERATED_AgeComp_Details.csv")
+
+
+# get top 4 age classes #, filter out any that have median < 2%
+age.comp.top4 <- age.comp.details %>% group_by(System, River) %>%
+                  arrange(desc(Perc_Med), .by_group = TRUE ) %>%
+                  slice_head(n=4) #%>%
+                  #ungroup() %>%
+                  #dplyr::filter(Perc_Med >=2)
+head(age.comp.top4)
+
+
+
+# get main age class by stock, then get main cohort for 4 main ages
+# main-2, main-1, main, main+1
+
+main.age.lookup <- age.comp.top4 %>% group_by(System, River) %>%
+  arrange(desc(Perc_Med), .by_group = TRUE ) %>%
+  slice_head(n=1) %>% select(System,River,Label, Perc_Med, Age, Euro,GR) %>%
+  dplyr::rename(MainAgeClass = Label)
+head(main.age.lookup )
+
+
+top.cohort.byage.lookup <-  age.comp.details %>% group_by(System, River,Age) %>%
+  arrange(desc(Perc_Med), .by_group = TRUE ) %>%
+  slice_head(n=1) %>% select(System, River,Age,Label,Euro,GR,Perc_Med)
+head(top.cohort.byage)
+
+
+tmp.src <- main.age.lookup %>% select(System,River, Age)
+
+age.lookup <- tmp.src  %>% bind_rows(tmp.src %>% mutate(Age=Age-2)) %>% 
+  bind_rows(tmp.src %>% mutate(Age=Age-1)) %>% 
+  bind_rows(tmp.src %>% mutate(Age=Age+1)) %>%
+  dplyr::filter(Age>2) %>% arrange(System, River, Age) %>%
+  left_join(top.cohort.byage.lookup, by = c("System","River","Age")) %>%
+  left_join(age.classes.src %>% select(Label,FW_Winters, Mar_Winters),by="Label") %>%
+  mutate(MarineEntryOffset_BrYr = FW_Winters+1,
+         MarineEntryOffset_RetYr = -Mar_Winters)
+head(age.lookup)
+
+# as per https://stackoverflow.com/questions/72304594/added-commented-section-to-output-csv-with-write-csv
+age.lookup.filename <- "DATA/3_ProcessedData/GENERATED_AgeComp_MainAgeClasses.csv"
+
+comment.text1 <- paste("# AGE CLASS LOOKUP FILE")
+comment.text2 <- paste("# Generated from return table")
+comment.text3 <- paste("# Step 1: Find the age class that accounts for most recruits by brood year (median % over all years)")
+comment.text4 <- paste("# Step 2: get main cohort for each age from MainAge-2 to MainAge+1 (excluding any 2-yr olds)")
+comment.text5 <- paste("# Step 3: Calculate ocean-entry offset from brood year and from return year for each age based on the dominant age class for that age")
+
+write_lines(comment.text1, age.lookup.filename)
+write_lines(comment.text2, age.lookup.filename, append = TRUE)
+write_lines(comment.text3, age.lookup.filename, append = TRUE)
+write_lines(comment.text4, age.lookup.filename, append = TRUE)
+write_lines(comment.text5, age.lookup.filename, append = TRUE)
+
+age.lookup  |> colnames() |> paste0(collapse = ",") |> write_lines(age.lookup.filename, append = TRUE)
+write_csv(age.lookup, age.lookup.filename , append = TRUE)
+

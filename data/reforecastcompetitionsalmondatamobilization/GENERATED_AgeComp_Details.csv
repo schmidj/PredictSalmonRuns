@@ -1,0 +1,253 @@
+System,River,Label,Perc_Min,Perc_p10,Perc_p25,Perc_Med,Perc_p75,Perc_p90,Perc_Max,Age,FW_Winters,Mar_Winters,Euro,GR
+Bristol Bay,Alagnak,AgeClass_0.1,0,0,0,0,0,0,0.65,2,0,1,0.1,2_1
+Bristol Bay,Alagnak,AgeClass_0.2,0,0,0,0,0,0,0.65,3,0,2,0.2,3_1
+Bristol Bay,Alagnak,AgeClass_0.3,0,0,0,0,0.0425,0.6539999999999995,23.43,4,0,3,0.3,4_1
+Bristol Bay,Alagnak,AgeClass_0.4,0,0,0,0,0,0,0.72,5,0,4,0.4,5_1
+Bristol Bay,Alagnak,AgeClass_0.5,0,0,0,0,0,0,0,6,0,5,0.5,6_1
+Bristol Bay,Alagnak,AgeClass_1.1,0,0,0,0.03,1.0575,3.2319999999999993,99.35,3,1,1,1.1,3_2
+Bristol Bay,Alagnak,AgeClass_1.2,0,0,0.4575,26.19,43.4175,56.535,99.96,4,1,2,1.2,4_2
+Bristol Bay,Alagnak,AgeClass_1.3,0,22.365000000000002,34.655,48.019999999999996,57.455,81.38799999999999,99.22,5,1,3,1.3,5_2
+Bristol Bay,Alagnak,AgeClass_1.4,0,0,0,0.01,0.3275,0.8389999999999999,14.41,6,1,4,1.4,6_2
+Bristol Bay,Alagnak,AgeClass_1.5,0,0,0,0,0,0,0,7,1,5,1.5,7_2
+Bristol Bay,Alagnak,AgeClass_2.1,0,0,0,0,0,0.018999999999999986,0.79,4,2,1,2.1,4_3
+Bristol Bay,Alagnak,AgeClass_2.2,0,0,0.07250000000000001,3.3550000000000004,16.8425,41.48899999999999,81.67,5,2,2,2.2,5_3
+Bristol Bay,Alagnak,AgeClass_2.3,0,0,0.21000000000000002,2.785,14.094999999999999,42.53999999999998,100,6,2,3,2.3,6_3
+Bristol Bay,Alagnak,AgeClass_2.4,0,0,0,0,0,0.01,4.52,7,2,4,2.4,7_3
+Bristol Bay,Alagnak,AgeClass_3.1,0,0,0,0,0,0,6.08,5,3,1,3.1,5_4
+Bristol Bay,Alagnak,AgeClass_3.2,0,0,0,0,0,0.08,19.98,6,3,2,3.2,6_4
+Bristol Bay,Alagnak,AgeClass_3.3,0,0,0,0,0,0.13,19.49,7,3,3,3.3,7_4
+Bristol Bay,Alagnak,AgeClass_3.4,0,0,0,0,0,0,0.02,8,3,4,3.4,8_4
+Bristol Bay,Egegik,AgeClass_0.1,0,0,0,0,0,0,0.01,2,0,1,0.1,2_1
+Bristol Bay,Egegik,AgeClass_0.2,0,0,0,0,0,0,0.08,3,0,2,0.2,3_1
+Bristol Bay,Egegik,AgeClass_0.3,0,0,0,0,0,0.018999999999999986,0.28,4,0,3,0.3,4_1
+Bristol Bay,Egegik,AgeClass_0.4,0,0,0,0,0,0,0.16,5,0,4,0.4,5_1
+Bristol Bay,Egegik,AgeClass_0.5,0,0,0,0,0,0,0,6,0,5,0.5,6_1
+Bristol Bay,Egegik,AgeClass_1.1,0,0,0,0.01,0.135,1.1239999999999994,100,3,1,1,1.1,3_2
+Bristol Bay,Egegik,AgeClass_1.2,0,0.8500000000000001,2.4375,6.105,16.404999999999998,26.934999999999995,93.33,4,1,2,1.2,4_2
+Bristol Bay,Egegik,AgeClass_1.3,0,2.96,4.8525,8.315,23.5025,33.300999999999995,48.22,5,1,3,1.3,5_2
+Bristol Bay,Egegik,AgeClass_1.4,0,0,0,0.01,0.06,0.24599999999999994,0.53,6,1,4,1.4,6_2
+Bristol Bay,Egegik,AgeClass_1.5,0,0,0,0,0,0,0,7,1,5,1.5,7_2
+Bristol Bay,Egegik,AgeClass_2.1,0,0.03,0.09,0.405,1.0975000000000001,2.764,8.28,4,2,1,2.1,4_3
+Bristol Bay,Egegik,AgeClass_2.2,3.9,21.918999999999997,29.57,46.235,57.93,66.168,79.38,5,2,2,2.2,5_3
+Bristol Bay,Egegik,AgeClass_2.3,0,11.504000000000001,19.3575,30.15,38.74,44.625,88.74,6,2,3,2.3,6_3
+Bristol Bay,Egegik,AgeClass_2.4,0,0,0,0,0.06,0.17,2.38,7,2,4,2.4,7_3
+Bristol Bay,Egegik,AgeClass_3.1,0,0,0,0,0.01,0.03,0.19,5,3,1,3.1,5_4
+Bristol Bay,Egegik,AgeClass_3.2,0,0.01,0.06,0.345,1.3824999999999998,2.546,35.56,6,3,2,3.2,6_4
+Bristol Bay,Egegik,AgeClass_3.3,0,0,0.02,0.14,0.32,0.96,9.77,7,3,3,3.3,7_4
+Bristol Bay,Egegik,AgeClass_3.4,0,0,0,0,0,0,0.01,8,3,4,3.4,8_4
+Bristol Bay,Igushik,AgeClass_0.1,0,0,0,0,0,0,0,2,0,1,0.1,2_1
+Bristol Bay,Igushik,AgeClass_0.2,0,0,0,0,0,0.04,0.36,3,0,2,0.2,3_1
+Bristol Bay,Igushik,AgeClass_0.3,0,0,0,0,0.11,0.4889999999999998,2.83,4,0,3,0.3,4_1
+Bristol Bay,Igushik,AgeClass_0.4,0,0,0,0,0,0.008999999999999985,0.19,5,0,4,0.4,5_1
+Bristol Bay,Igushik,AgeClass_0.5,0,0,0,0,0,0,0,6,0,5,0.5,6_1
+Bristol Bay,Igushik,AgeClass_1.1,0,0,0,0,0,0.036999999999999957,100,3,1,1,1.1,3_2
+Bristol Bay,Igushik,AgeClass_1.2,0.17,6.535,13.120000000000001,23.39,33.2475,41.535,100,4,1,2,1.2,4_2
+Bristol Bay,Igushik,AgeClass_1.3,22.5,41.319,54.9675,65.85,76.9425,83.87100000000001,90.35,5,1,3,1.3,5_2
+Bristol Bay,Igushik,AgeClass_1.4,0,0,0,0.15,0.44,0.66,6.13,6,1,4,1.4,6_2
+Bristol Bay,Igushik,AgeClass_1.5,0,0,0,0,0,0,0,7,1,5,1.5,7_2
+Bristol Bay,Igushik,AgeClass_2.1,0,0,0,0,0,0,0.31,4,2,1,2.1,4_3
+Bristol Bay,Igushik,AgeClass_2.2,0.03,0.29300000000000004,0.7775000000000001,2.4699999999999998,7.8475,18.883999999999997,58.38,5,2,2,2.2,5_3
+Bristol Bay,Igushik,AgeClass_2.3,0,0.603,1.2574999999999998,2.965,6.565,11.099,100,6,2,3,2.3,6_3
+Bristol Bay,Igushik,AgeClass_2.4,0,0,0,0,0,0,0.32,7,2,4,2.4,7_3
+Bristol Bay,Igushik,AgeClass_3.1,0,0,0,0,0,0,0.04,5,3,1,3.1,5_4
+Bristol Bay,Igushik,AgeClass_3.2,0,0,0,0,0,0,0.03,6,3,2,3.2,6_4
+Bristol Bay,Igushik,AgeClass_3.3,0,0,0,0,0,0,0.02,7,3,3,3.3,7_4
+Bristol Bay,Igushik,AgeClass_3.4,0,0,0,0,0,0,0,8,3,4,3.4,8_4
+Bristol Bay,Kvichak,AgeClass_0.1,0,0,0,0,0,0,0.3,2,0,1,0.1,2_1
+Bristol Bay,Kvichak,AgeClass_0.2,0,0,0,0,0,0.12599999999999995,0.3,3,0,2,0.2,3_1
+Bristol Bay,Kvichak,AgeClass_0.3,0,0,0,0,0.01,0.19599999999999995,0.83,4,0,3,0.3,4_1
+Bristol Bay,Kvichak,AgeClass_0.4,0,0,0,0,0,0.01,0.08,5,0,4,0.4,5_1
+Bristol Bay,Kvichak,AgeClass_0.5,0,0,0,0,0,0,0,6,0,5,0.5,6_1
+Bristol Bay,Kvichak,AgeClass_1.1,0,0,0,0.01,0.06,0.12799999999999997,99.7,3,1,1,1.1,3_2
+Bristol Bay,Kvichak,AgeClass_1.2,0.3,5.797000000000001,14.3925,32.815,46.515,65.316,99.89,4,1,2,1.2,4_2
+Bristol Bay,Kvichak,AgeClass_1.3,0,3.519,5.8950000000000005,19.28,28.985000000000003,36.75099999999999,73.07,5,1,3,1.3,5_2
+Bristol Bay,Kvichak,AgeClass_1.4,0,0,0,0.02,0.1425,0.40299999999999986,2.54,6,1,4,1.4,6_2
+Bristol Bay,Kvichak,AgeClass_1.5,0,0,0,0,0,0,0,7,1,5,1.5,7_2
+Bristol Bay,Kvichak,AgeClass_2.1,0,0,0,0.07,0.24,0.6869999999999999,2.22,4,2,1,2.1,4_3
+Bristol Bay,Kvichak,AgeClass_2.2,0.58,3.4,16.6725,38.75,65.355,79.9,99.25,5,2,2,2.2,5_3
+Bristol Bay,Kvichak,AgeClass_2.3,0,1.201,2.8049999999999997,7.154999999999999,10.7225,20.296,99.31,6,2,3,2.3,6_3
+Bristol Bay,Kvichak,AgeClass_2.4,0,0,0,0,0,0.02,0.12,7,2,4,2.4,7_3
+Bristol Bay,Kvichak,AgeClass_3.1,0,0,0,0,0,0,0,5,3,1,3.1,5_4
+Bristol Bay,Kvichak,AgeClass_3.2,0,0,0,0,0.01,0.10499999999999993,1.15,6,3,2,3.2,6_4
+Bristol Bay,Kvichak,AgeClass_3.3,0,0,0,0,0,0.01,1.01,7,3,3,3.3,7_4
+Bristol Bay,Kvichak,AgeClass_3.4,0,0,0,0,0,0,0,8,3,4,3.4,8_4
+Bristol Bay,Naknek,AgeClass_0.1,0,0,0,0,0,0,0,2,0,1,0.1,2_1
+Bristol Bay,Naknek,AgeClass_0.2,0,0,0,0,0,0,0.05,3,0,2,0.2,3_1
+Bristol Bay,Naknek,AgeClass_0.3,0,0,0,0,0,0.02,0.38,4,0,3,0.3,4_1
+Bristol Bay,Naknek,AgeClass_0.4,0,0,0,0,0,0,0.06,5,0,4,0.4,5_1
+Bristol Bay,Naknek,AgeClass_0.5,0,0,0,0,0,0,0,6,0,5,0.5,6_1
+Bristol Bay,Naknek,AgeClass_1.1,0,0,0.0025,0.055,0.3125,0.8269999999999997,100,3,1,1,1.1,3_2
+Bristol Bay,Naknek,AgeClass_1.2,2.15,8.122,11.4575,18.36,31.935000000000002,43.553,97.8,4,1,2,1.2,4_2
+Bristol Bay,Naknek,AgeClass_1.3,8.52,15.296000000000001,25.845,37.004999999999995,50.4925,61.163,86.41,5,1,3,1.3,5_2
+Bristol Bay,Naknek,AgeClass_1.4,0,0,0.0225,0.265,0.6775,1.4859999999999998,3.46,6,1,4,1.4,6_2
+Bristol Bay,Naknek,AgeClass_1.5,0,0,0,0,0,0,0.07,7,1,5,1.5,7_2
+Bristol Bay,Naknek,AgeClass_2.1,0,0,0.04,0.175,0.43000000000000005,0.7999999999999998,2.05,4,2,1,2.1,4_3
+Bristol Bay,Naknek,AgeClass_2.2,0.77,3.529,9.959999999999999,17.735,26.92,40.879,71.05,5,2,2,2.2,5_3
+Bristol Bay,Naknek,AgeClass_2.3,1.73,4.968,9.42,17.765,25.885,35.461999999999996,99.78,6,2,3,2.3,6_3
+Bristol Bay,Naknek,AgeClass_2.4,0,0,0,0.01,0.08,0.26,0.58,7,2,4,2.4,7_3
+Bristol Bay,Naknek,AgeClass_3.1,0,0,0,0,0,0,0.11,5,3,1,3.1,5_4
+Bristol Bay,Naknek,AgeClass_3.2,0,0,0,0,0.0725,0.2,0.69,6,3,2,3.2,6_4
+Bristol Bay,Naknek,AgeClass_3.3,0,0,0,0,0,0.07,0.33,7,3,3,3.3,7_4
+Bristol Bay,Naknek,AgeClass_3.4,0,0,0,0,0,0,0,8,3,4,3.4,8_4
+Bristol Bay,Nushagak,AgeClass_0.1,0,0,0,0,0,0,0,2,0,1,0.1,2_1
+Bristol Bay,Nushagak,AgeClass_0.2,0,0,0,0.15500000000000003,1.5225,6.251999999999999,14.96,3,0,2,0.2,3_1
+Bristol Bay,Nushagak,AgeClass_0.3,0,0,0,1.645,15.125,32.343999999999994,49.74,4,0,3,0.3,4_1
+Bristol Bay,Nushagak,AgeClass_0.4,0,0,0,0.04,1.3425,4.464,18.05,5,0,4,0.4,5_1
+Bristol Bay,Nushagak,AgeClass_0.5,0,0,0,0,0,0,0.06,6,0,5,0.5,6_1
+Bristol Bay,Nushagak,AgeClass_1.1,0,0,0,0,0.0675,0.37499999999999994,100,3,1,1,1.1,3_2
+Bristol Bay,Nushagak,AgeClass_1.2,0,0.002000000000000011,4.485,8.315,14.572499999999998,25.122999999999998,99.65,4,1,2,1.2,4_2
+Bristol Bay,Nushagak,AgeClass_1.3,0,14.286000000000005,44.6475,74.34,81.7125,86.109,93.58,5,1,3,1.3,5_2
+Bristol Bay,Nushagak,AgeClass_1.4,0,0,0.4725,1.6,4.9174999999999995,9.53,24.37,6,1,4,1.4,6_2
+Bristol Bay,Nushagak,AgeClass_1.5,0,0,0,0,0,0,0.58,7,1,5,1.5,7_2
+Bristol Bay,Nushagak,AgeClass_2.1,0,0,0,0,0,0,3.45,4,2,1,2.1,4_3
+Bristol Bay,Nushagak,AgeClass_2.2,0,0,0.16499999999999998,0.745,2.7449999999999997,16.115,90.59,5,2,2,2.2,5_3
+Bristol Bay,Nushagak,AgeClass_2.3,0,0.15400000000000003,0.455,1.2,3.045,9.972999999999999,75.63,6,2,3,2.3,6_3
+Bristol Bay,Nushagak,AgeClass_2.4,0,0,0,0,0,0.03,0.5,7,2,4,2.4,7_3
+Bristol Bay,Nushagak,AgeClass_3.1,0,0,0,0,0,0,0,5,3,1,3.1,5_4
+Bristol Bay,Nushagak,AgeClass_3.2,0,0,0,0,0,0,2.31,6,3,2,3.2,6_4
+Bristol Bay,Nushagak,AgeClass_3.3,0,0,0,0,0,0,0,7,3,3,3.3,7_4
+Bristol Bay,Nushagak,AgeClass_3.4,0,0,0,0,0,0,0,8,3,4,3.4,8_4
+Bristol Bay,Ugashik,AgeClass_0.1,0,0,0,0,0,0,0.01,2,0,1,0.1,2_1
+Bristol Bay,Ugashik,AgeClass_0.2,0,0,0,0,0,0.06799999999999998,0.27,3,0,2,0.2,3_1
+Bristol Bay,Ugashik,AgeClass_0.3,0,0,0,0,0.1325,0.3819999999999999,4.37,4,0,3,0.3,4_1
+Bristol Bay,Ugashik,AgeClass_0.4,0,0,0,0,0,0.018999999999999986,0.05,5,0,4,0.4,5_1
+Bristol Bay,Ugashik,AgeClass_0.5,0,0,0,0,0,0,0,6,0,5,0.5,6_1
+Bristol Bay,Ugashik,AgeClass_1.1,0,0,0,0.055,0.345,1.1929999999999996,100,3,1,1,1.1,3_2
+Bristol Bay,Ugashik,AgeClass_1.2,0,7.030000000000001,13.9325,25.505000000000003,40.480000000000004,50.80899999999999,97.18,4,1,2,1.2,4_2
+Bristol Bay,Ugashik,AgeClass_1.3,0,8.473,17.317500000000003,28.854999999999997,37.8525,53.571999999999996,77.65,5,1,3,1.3,5_2
+Bristol Bay,Ugashik,AgeClass_1.4,0,0,0.02,0.12,0.2875,0.539,2.39,6,1,4,1.4,6_2
+Bristol Bay,Ugashik,AgeClass_1.5,0,0,0,0,0,0,0.02,7,1,5,1.5,7_2
+Bristol Bay,Ugashik,AgeClass_2.1,0,0,0.01,0.095,0.35250000000000004,0.7149999999999999,3.86,4,2,1,2.1,4_3
+Bristol Bay,Ugashik,AgeClass_2.2,0.56,2.4940000000000007,11.240000000000002,27.4,41.9125,58.956,87.09,5,2,2,2.2,5_3
+Bristol Bay,Ugashik,AgeClass_2.3,0,0.973,5.785,9.925,17.095000000000002,29.866999999999997,97.62,6,2,3,2.3,6_3
+Bristol Bay,Ugashik,AgeClass_2.4,0,0,0,0,0.04,0.15,0.88,7,2,4,2.4,7_3
+Bristol Bay,Ugashik,AgeClass_3.1,0,0,0,0,0,0,0,5,3,1,3.1,5_4
+Bristol Bay,Ugashik,AgeClass_3.2,0,0,0,0,0,0.04,12.66,6,3,2,3.2,6_4
+Bristol Bay,Ugashik,AgeClass_3.3,0,0,0,0,0,0.1,0.91,7,3,3,3.3,7_4
+Bristol Bay,Ugashik,AgeClass_3.4,0,0,0,0,0,0,0,8,3,4,3.4,8_4
+Bristol Bay,Wood,AgeClass_0.1,0,0,0,0,0,0,0.01,2,0,1,0.1,2_1
+Bristol Bay,Wood,AgeClass_0.2,0,0,0,0,0.01,0.15699999999999995,0.66,3,0,2,0.2,3_1
+Bristol Bay,Wood,AgeClass_0.3,0,0,0,0,0.155,0.6429999999999998,2.59,4,0,3,0.3,4_1
+Bristol Bay,Wood,AgeClass_0.4,0,0,0,0,0.0075,0.09599999999999995,0.59,5,0,4,0.4,5_1
+Bristol Bay,Wood,AgeClass_0.5,0,0,0,0,0,0,0,6,0,5,0.5,6_1
+Bristol Bay,Wood,AgeClass_1.1,0,0,0.0125,0.07,0.1975,0.5839999999999999,100,3,1,1,1.1,3_2
+Bristol Bay,Wood,AgeClass_1.2,6.14,26.547000000000004,36.457499999999996,47.525000000000006,56.805,67.355,99.4,4,1,2,1.2,4_2
+Bristol Bay,Wood,AgeClass_1.3,13.6,24.95,32.9225,44.64,54.477500000000006,65.873,84.48,5,1,3,1.3,5_2
+Bristol Bay,Wood,AgeClass_1.4,0,0,0,0.11499999999999999,0.265,0.6369999999999999,2.61,6,1,4,1.4,6_2
+Bristol Bay,Wood,AgeClass_1.5,0,0,0,0,0,0,0.05,7,1,5,1.5,7_2
+Bristol Bay,Wood,AgeClass_2.1,0,0,0,0,0.017499999999999998,0.05,0.87,4,2,1,2.1,4_3
+Bristol Bay,Wood,AgeClass_2.2,0.04,0.4990000000000001,1.4649999999999999,3.125,7.0925,13.752999999999993,38.78,5,2,2,2.2,5_3
+Bristol Bay,Wood,AgeClass_2.3,0,0.529,0.9400000000000001,1.85,4.3525,7.799,100,6,2,3,2.3,6_3
+Bristol Bay,Wood,AgeClass_2.4,0,0,0,0,0,0.02,0.05,7,2,4,2.4,7_3
+Bristol Bay,Wood,AgeClass_3.1,0,0,0,0,0,0,0.02,5,3,1,3.1,5_4
+Bristol Bay,Wood,AgeClass_3.2,0,0,0,0,0,0,0.05,6,3,2,3.2,6_4
+Bristol Bay,Wood,AgeClass_3.3,0,0,0,0,0,0,0.02,7,3,3,3.3,7_4
+Bristol Bay,Wood,AgeClass_3.4,0,0,0,0,0,0,0,8,3,4,3.4,8_4
+Columbia River,Bonneville Lock & Dam,AgeClass_0.1,0,0,0,0,0,0,0,2,0,1,0.1,2_1
+Columbia River,Bonneville Lock & Dam,AgeClass_0.2,0,0,0,0,0,0,0,3,0,2,0.2,3_1
+Columbia River,Bonneville Lock & Dam,AgeClass_0.3,0,0,0,0,0,0,0,4,0,3,0.3,4_1
+Columbia River,Bonneville Lock & Dam,AgeClass_0.4,0,0,0,0,0,0,0,5,0,4,0.4,5_1
+Columbia River,Bonneville Lock & Dam,AgeClass_0.5,0,0,0,0,0,0,0,6,0,5,0.5,6_1
+Columbia River,Bonneville Lock & Dam,AgeClass_1.1,0,1.1309999999999998,2.6925,4.535,7.15,14.557000000000002,100,3,1,1,1.1,3_2
+Columbia River,Bonneville Lock & Dam,AgeClass_1.2,40.38,55.259,69.9125,78.82,86.24249999999999,89.273,94.71,4,1,2,1.2,4_2
+Columbia River,Bonneville Lock & Dam,AgeClass_1.3,0.38,3.1400000000000006,4.79,6.4350000000000005,10.684999999999999,13.285000000000004,31.23,5,1,3,1.3,5_2
+Columbia River,Bonneville Lock & Dam,AgeClass_1.4,0,0,0,0,0,0,0,6,1,4,1.4,6_2
+Columbia River,Bonneville Lock & Dam,AgeClass_1.5,0,0,0,0,0,0,0,7,1,5,1.5,7_2
+Columbia River,Bonneville Lock & Dam,AgeClass_2.1,0,0.09700000000000002,0.375,1.0350000000000001,2.305,6.060000000000003,52.31,4,2,1,2.1,4_3
+Columbia River,Bonneville Lock & Dam,AgeClass_2.2,0.1,0.359,1.875,3.3600000000000003,8.025,22.054000000000002,86.53,5,2,2,2.2,5_3
+Columbia River,Bonneville Lock & Dam,AgeClass_2.3,0,0,0,0.08,0.26,0.9540000000000006,3.56,6,2,3,2.3,6_3
+Columbia River,Bonneville Lock & Dam,AgeClass_2.4,0,0,0,0,0,0,0,7,2,4,2.4,7_3
+Columbia River,Bonneville Lock & Dam,AgeClass_3.1,0,0,0,0,0,0.2530000000000006,15.94,5,3,1,3.1,5_4
+Columbia River,Bonneville Lock & Dam,AgeClass_3.2,0,0,0,0,0,0.030000000000000145,1.59,6,3,2,3.2,6_4
+Columbia River,Bonneville Lock & Dam,AgeClass_3.3,0,0,0,0,0,0,0.03,7,3,3,3.3,7_4
+Columbia River,Bonneville Lock & Dam,AgeClass_3.4,0,0,0,0,0,0,0,8,3,4,3.4,8_4
+Fraser River,Chilko,AgeClass_0.1,0,0,0,0,0,0,0,2,0,1,0.1,2_1
+Fraser River,Chilko,AgeClass_0.2,0,0,0,0,0,0,0,3,0,2,0.2,3_1
+Fraser River,Chilko,AgeClass_0.3,0,0,0,0,0,0,0,4,0,3,0.3,4_1
+Fraser River,Chilko,AgeClass_0.4,0,0,0,0,0,0,0,5,0,4,0.4,5_1
+Fraser River,Chilko,AgeClass_0.5,0,0,0,0,0,0,0,6,0,5,0.5,6_1
+Fraser River,Chilko,AgeClass_1.1,0,0.08600000000000002,0.2025,0.53,1.3575,2.339000000000001,100,3,1,1,1.1,3_2
+Fraser River,Chilko,AgeClass_1.2,63.88,78.096,84.67,89.97,93.04,95.582,100,4,1,2,1.2,4_2
+Fraser River,Chilko,AgeClass_1.3,0,0.611,1.6524999999999999,3.955,8.26,13.831999999999999,32.18,5,1,3,1.3,5_2
+Fraser River,Chilko,AgeClass_1.4,0,0,0,0,0,0,0.02,6,1,4,1.4,6_2
+Fraser River,Chilko,AgeClass_1.5,0,0,0,0,0,0,0,7,1,5,1.5,7_2
+Fraser River,Chilko,AgeClass_2.1,0,0,0,0.03,0.25,0.5799999999999998,1.55,4,2,1,2.1,4_3
+Fraser River,Chilko,AgeClass_2.2,0,0.24200000000000005,0.7349999999999999,2.855,7.705,11.483000000000002,30.13,5,2,2,2.2,5_3
+Fraser River,Chilko,AgeClass_2.3,0,0,0,0,0.08,0.45,1.17,6,2,3,2.3,6_3
+Fraser River,Chilko,AgeClass_2.4,0,0,0,0,0,0,0,7,2,4,2.4,7_3
+Fraser River,Chilko,AgeClass_3.1,0,0,0,0,0,0,0,5,3,1,3.1,5_4
+Fraser River,Chilko,AgeClass_3.2,0,0,0,0,0,0,0,6,3,2,3.2,6_4
+Fraser River,Chilko,AgeClass_3.3,0,0,0,0,0,0,0,7,3,3,3.3,7_4
+Fraser River,Chilko,AgeClass_3.4,0,0,0,0,0,0,0,8,3,4,3.4,8_4
+Fraser River,Late Stuart,AgeClass_0.1,0,0,0,0,0,0,0,2,0,1,0.1,2_1
+Fraser River,Late Stuart,AgeClass_0.2,0,0,0,0,0,0,0,3,0,2,0.2,3_1
+Fraser River,Late Stuart,AgeClass_0.3,0,0,0,0,0,0,0,4,0,3,0.3,4_1
+Fraser River,Late Stuart,AgeClass_0.4,0,0,0,0,0,0,0,5,0,4,0.4,5_1
+Fraser River,Late Stuart,AgeClass_0.5,0,0,0,0,0,0,0,6,0,5,0.5,6_1
+Fraser River,Late Stuart,AgeClass_1.1,0,0,0.01,0.1,0.36749999999999994,1.3290000000000002,100,3,1,1,1.1,3_2
+Fraser River,Late Stuart,AgeClass_1.2,29.22,75.582,86.1,95.34,98.04,99.694,100,4,1,2,1.2,4_2
+Fraser River,Late Stuart,AgeClass_1.3,0,0,1.625,4.645,13.975,24.612000000000023,70.78,5,1,3,1.3,5_2
+Fraser River,Late Stuart,AgeClass_1.4,0,0,0,0,0,0,0,6,1,4,1.4,6_2
+Fraser River,Late Stuart,AgeClass_1.5,0,0,0,0,0,0,0,7,1,5,1.5,7_2
+Fraser River,Late Stuart,AgeClass_2.1,0,0,0,0,0,0,0.01,4,2,1,2.1,4_3
+Fraser River,Late Stuart,AgeClass_2.2,0,0,0,0,0,0.01,1.55,5,2,2,2.2,5_3
+Fraser River,Late Stuart,AgeClass_2.3,0,0,0,0,0,0,0,6,2,3,2.3,6_3
+Fraser River,Late Stuart,AgeClass_2.4,0,0,0,0,0,0,0,7,2,4,2.4,7_3
+Fraser River,Late Stuart,AgeClass_3.1,0,0,0,0,0,0,0,5,3,1,3.1,5_4
+Fraser River,Late Stuart,AgeClass_3.2,0,0,0,0,0,0,0,6,3,2,3.2,6_4
+Fraser River,Late Stuart,AgeClass_3.3,0,0,0,0,0,0,0,7,3,3,3.3,7_4
+Fraser River,Late Stuart,AgeClass_3.4,0,0,0,0,0,0,0,8,3,4,3.4,8_4
+Fraser River,Quesnel,AgeClass_0.1,0,0,0,0,0,0,0,2,0,1,0.1,2_1
+Fraser River,Quesnel,AgeClass_0.2,0,0,0,0,0,0.014000000000000058,0.14,3,0,2,0.2,3_1
+Fraser River,Quesnel,AgeClass_0.3,0,0,0,0,0,0,1.39,4,0,3,0.3,4_1
+Fraser River,Quesnel,AgeClass_0.4,0,0,0,0,0,0,0,5,0,4,0.4,5_1
+Fraser River,Quesnel,AgeClass_0.5,0,0,0,0,0,0,0,6,0,5,0.5,6_1
+Fraser River,Quesnel,AgeClass_1.1,0,0,0,0.01,0.22,0.9340000000000003,100,3,1,1,1.1,3_2
+Fraser River,Quesnel,AgeClass_1.2,10.98,68.27999999999999,91.45,97.16,99.59,100,100,4,1,2,1.2,4_2
+Fraser River,Quesnel,AgeClass_1.3,0,0,0,2.015,7.659999999999999,32.036000000000016,86.63,5,1,3,1.3,5_2
+Fraser River,Quesnel,AgeClass_1.4,0,0,0,0,0,0,0,6,1,4,1.4,6_2
+Fraser River,Quesnel,AgeClass_1.5,0,0,0,0,0,0,0,7,1,5,1.5,7_2
+Fraser River,Quesnel,AgeClass_2.1,0,0,0,0,0,0,0.01,4,2,1,2.1,4_3
+Fraser River,Quesnel,AgeClass_2.2,0,0,0,0,0.0125,0.1850000000000003,3.5,5,2,2,2.2,5_3
+Fraser River,Quesnel,AgeClass_2.3,0,0,0,0,0,0,0.09,6,2,3,2.3,6_3
+Fraser River,Quesnel,AgeClass_2.4,0,0,0,0,0,0,0,7,2,4,2.4,7_3
+Fraser River,Quesnel,AgeClass_3.1,0,0,0,0,0,0,0,5,3,1,3.1,5_4
+Fraser River,Quesnel,AgeClass_3.2,0,0,0,0,0,0,0,6,3,2,3.2,6_4
+Fraser River,Quesnel,AgeClass_3.3,0,0,0,0,0,0,0,7,3,3,3.3,7_4
+Fraser River,Quesnel,AgeClass_3.4,0,0,0,0,0,0,0,8,3,4,3.4,8_4
+Fraser River,Raft,AgeClass_0.1,0,0,0,0,0,0,0,2,0,1,0.1,2_1
+Fraser River,Raft,AgeClass_0.2,0,0,0,0,0,0,2.44,3,0,2,0.2,3_1
+Fraser River,Raft,AgeClass_0.3,0,0,0,0,0,0,3.41,4,0,3,0.3,4_1
+Fraser River,Raft,AgeClass_0.4,0,0,0,0,0,0,0,5,0,4,0.4,5_1
+Fraser River,Raft,AgeClass_0.5,0,0,0,0,0,0,0,6,0,5,0.5,6_1
+Fraser River,Raft,AgeClass_1.1,0,0,0,0.04,0.18,0.41199999999999987,2.65,3,1,1,1.1,3_2
+Fraser River,Raft,AgeClass_1.2,16.64,40.013999999999996,63.29,79.41,91.47,94.41,100,4,1,2,1.2,4_2
+Fraser River,Raft,AgeClass_1.3,1.08,4.010000000000002,8.6875,19.384999999999998,35.025,56.42800000000001,82.5,5,1,3,1.3,5_2
+Fraser River,Raft,AgeClass_1.4,0,0,0,0,0,0,0,6,1,4,1.4,6_2
+Fraser River,Raft,AgeClass_1.5,0,0,0,0,0,0,0,7,1,5,1.5,7_2
+Fraser River,Raft,AgeClass_2.1,0,0,0,0,0,0,0.01,4,2,1,2.1,4_3
+Fraser River,Raft,AgeClass_2.2,0,0,0,0,0.085,2.2720000000000025,27,5,2,2,2.2,5_3
+Fraser River,Raft,AgeClass_2.3,0,0,0,0,0,0,14.74,6,2,3,2.3,6_3
+Fraser River,Raft,AgeClass_2.4,0,0,0,0,0,0,0,7,2,4,2.4,7_3
+Fraser River,Raft,AgeClass_3.1,0,0,0,0,0,0,0,5,3,1,3.1,5_4
+Fraser River,Raft,AgeClass_3.2,0,0,0,0,0,0,0,6,3,2,3.2,6_4
+Fraser River,Raft,AgeClass_3.3,0,0,0,0,0,0,0,7,3,3,3.3,7_4
+Fraser River,Raft,AgeClass_3.4,0,0,0,0,0,0,0,8,3,4,3.4,8_4
+Fraser River,Stellako,AgeClass_0.1,0,0,0,0,0,0,0,2,0,1,0.1,2_1
+Fraser River,Stellako,AgeClass_0.2,0,0,0,0,0,0,0.13,3,0,2,0.2,3_1
+Fraser River,Stellako,AgeClass_0.3,0,0,0,0,0,0,0.27,4,0,3,0.3,4_1
+Fraser River,Stellako,AgeClass_0.4,0,0,0,0,0,0,0,5,0,4,0.4,5_1
+Fraser River,Stellako,AgeClass_0.5,0,0,0,0,0,0,0,6,0,5,0.5,6_1
+Fraser River,Stellako,AgeClass_1.1,0,0,0.01,0.03,0.1175,0.2580000000000001,100,3,1,1,1.1,3_2
+Fraser River,Stellako,AgeClass_1.2,22,70.86200000000001,78.71,88.26,94.05,96.37,100,4,1,2,1.2,4_2
+Fraser River,Stellako,AgeClass_1.3,0,3.4040000000000004,6.220000000000001,12.17,21.3775,29.146,78,5,1,3,1.3,5_2
+Fraser River,Stellako,AgeClass_1.4,0,0,0,0,0,0,0.24,6,1,4,1.4,6_2
+Fraser River,Stellako,AgeClass_1.5,0,0,0,0,0,0,0,7,1,5,1.5,7_2
+Fraser River,Stellako,AgeClass_2.1,0,0,0,0,0,0,0,4,2,1,2.1,4_3
+Fraser River,Stellako,AgeClass_2.2,0,0,0,0,0,0,0.37,5,2,2,2.2,5_3
+Fraser River,Stellako,AgeClass_2.3,0,0,0,0,0,0,0,6,2,3,2.3,6_3
+Fraser River,Stellako,AgeClass_2.4,0,0,0,0,0,0,0,7,2,4,2.4,7_3
+Fraser River,Stellako,AgeClass_3.1,0,0,0,0,0,0,0,5,3,1,3.1,5_4
+Fraser River,Stellako,AgeClass_3.2,0,0,0,0,0,0,0,6,3,2,3.2,6_4
+Fraser River,Stellako,AgeClass_3.3,0,0,0,0,0,0,0,7,3,3,3.3,7_4
+Fraser River,Stellako,AgeClass_3.4,0,0,0,0,0,0,0,8,3,4,3.4,8_4

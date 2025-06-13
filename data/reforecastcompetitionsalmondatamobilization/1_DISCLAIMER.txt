@@ -1,0 +1,6 @@
+IMPORTANT DISCLAIMER
+
+The reorganized data sets and code in this folder are being shared as-is, in case they are helpful to other participants in the 2025 Sockeye International. However, the official data set are the original files shared by the competition, and in case of any discrepancies the original source files should be used. 
+
+If you have an questions or corrections, please contact gottfried.pestal@solv.ca
+Any feedback on data structure or suggestions for improving the code are also greatly appreciated!
