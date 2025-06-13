@@ -11,10 +11,12 @@ data_dir = os.path.join("..", "data")
 #fish_features = os.path.join(data_dir, "Combined_Brood_Bristol_Columbia_Fraser.csv")
 fish_features = os.path.join(data_dir, "Brood_Return_First_Year_At_Sea_Tables", "Combined_Return_Bristol_Columbia_Fraser.csv")
 pancea_features = os.path.join(data_dir, "GENERATED_pacea_series_annual.csv")
+sst_df = os.path.join(data_dir, "sst_april_july_by_region.csv")
 
 # Load feature sheets
 fish_df = pd.read_csv(fish_features)
 pancea_df = pd.read_csv(pancea_features)
+sst_df = pd.read_csv(sst_df)
 
 #%% Prepare fish_df
 # Rename ReturnYear for clarity
@@ -28,6 +30,28 @@ fish_df['Total_Returns_NextYear'] = fish_df.groupby(['System', 'River'])['Total_
 
 # Merge with climate/ocean features (PANCEA)
 combined_df = fish_df.merge(pancea_df, how='left', on='Year')
+
+# Merge with SST data
+sst_suffix_map = {
+    "Bristol Bay": "BristolBay",
+    "Columbia River": "ColumbiaRiver",
+    "Fraser River": "FraserRiver"
+}
+
+combined_df["sst_aprjul"] = pd.NA
+combined_df["sst_anom"] = pd.NA
+
+for i, row in combined_df.iterrows():
+    system = row["System"]
+    year = row["Year"]
+    
+    if system in sst_suffix_map:
+        suffix = sst_suffix_map[system]
+        sst_row = sst_df[sst_df["year"] == year]
+        
+        if not sst_row.empty:
+            combined_df.at[i, "sst_aprjul"] = sst_row.iloc[0][f"sst_aprjul_{suffix}"]
+            combined_df.at[i, "sst_anom"] = sst_row.iloc[0][f"sst_anom_{suffix}"]
 
 # Drop rows where target is missing (i.e., last year of each group) and index column
 combined_df = combined_df.dropna(subset=['Total_Returns_NextYear'])
@@ -131,7 +155,7 @@ for system in combined_df['System'].unique():
         system_df = system_df.drop(columns=[col for col in drop_cols if col in system_df.columns])
     
     # Save cleaned file
-    system_path = os.path.join(data_dir, f"{system}_FeatureSet_For_Model.csv")
+    system_path = os.path.join(data_dir, f"{system.replace(' ', '')}_FeatureSet_For_Model.csv")
     system_df.to_csv(system_path, index=False)
 
     sys_samples = system_df.shape[0]
