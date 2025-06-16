@@ -1,0 +1,26 @@
+VARIABLE DESCRIPTIONS
+Contributed by Julia Schmid (jul.s.schmid@gmail.com)
+
+Column Name: Description
+
+System: Geographic or management system (e.g., "Bristol Bay")
+River: Name of the river (e.g., "Alagnak")
+ReturnYear: Year the fish returned from the ocean
+Total_Returns: Total number of fish that returned that year
+Label: Label for the age class (e.g., "AgeClass_0.3")
+ReturnsByAgeClass: Number of returns attributed to this specific age class
+Age: Total age of the fish at return
+FW_Winters: Number of winters spent in freshwater (before ocean entry)
+Mar_Winters: Number of winters spent in the marine environment
+Euro: European age class notation (FW + "." + Marine; e.g., 0.3 = 0 FW, 3 marine)
+GR: Gilbert-Rich notation, another way to encode age (e.g., 4_2 = 4
+total age, enter ocean in second year after brood year )
+BroodYear: Year the fish were born (ReturnYear - total age)
+RecruitsByAgeClass: Recruits (offspring that returned) for this age class
+MarineEntryYear: Year this age class of the cohort entered the ocean (BroodYear + FW_Winters)
+Total_Recruits:	Total number of recruits from the same BroodYear
+PercOfBrdYr: Percentage of total recruits from the BroodYear this age class represents
+Total_Spawners_BroodYear: Number of spawners that produced this BroodYear's cohort
+TotRecPerTotSpn: Recruitment per spawner (i.e., total recruits / total spawners)
+
+
