@@ -12,11 +12,13 @@ data_dir = os.path.join("..", "data")
 fish_features = os.path.join(data_dir, "Brood_Return_First_Year_At_Sea_Tables", "Combined_Return_Bristol_Columbia_Fraser.csv")
 pancea_features = os.path.join(data_dir, "GENERATED_pacea_series_annual.csv")
 sst_df = os.path.join(data_dir, "sst_april_july_by_region.csv")
+sss_fraser_df = os.path.join(data_dir, "Fraser_River/Departure_Bay_PBS/Departure_Bay_PBS_-_Average_Monthly_Sea_Surface_Salinities_1914-2025.csv")
 
 # Load feature sheets
 fish_df = pd.read_csv(fish_features)
 pancea_df = pd.read_csv(pancea_features)
 sst_df = pd.read_csv(sst_df)
+sss_fraser_df = pd.read_csv(sss_fraser_df, skiprows=1)
 
 #%% Prepare fish_df
 # Rename ReturnYear for clarity
@@ -52,6 +54,19 @@ for i, row in combined_df.iterrows():
         if not sst_row.empty:
             combined_df.at[i, "sst_aprjul"] = sst_row.iloc[0][f"sst_aprjul_{suffix}"]
             combined_df.at[i, "sst_anom"] = sst_row.iloc[0][f"sst_anom_{suffix}"]
+
+# Add sea surface salinity data
+sss_fraser_df.replace(999.99, np.nan, inplace=True)
+# Compute average salinity for April–June and May–August
+sss_fraser_df['sss_aprjun'] = sss_fraser_df[['APR', 'MAY', 'JUN']].mean(axis=1)
+sss_fraser_df['sss_mayaug'] = sss_fraser_df[['MAY', 'JUN', 'JUL', 'AUG']].mean(axis=1)
+
+sss_fraser_df = sss_fraser_df[['YEAR', 'sss_aprjun', 'sss_mayaug']]
+sss_fraser_df.rename(columns={'YEAR': 'Year'}, inplace=True)
+
+fraser_mask = combined_df['System'] == 'Fraser River'
+combined_df.loc[fraser_mask, ['sss_aprjun', 'sss_mayaug']] = combined_df[fraser_mask].merge(
+    sss_fraser_df, how='left', on='Year')[['sss_aprjun', 'sss_mayaug']].values
 
 # Drop rows where target is missing (i.e., last year of each group) and index column
 combined_df = combined_df.dropna(subset=['Total_Returns_NextYear'])
