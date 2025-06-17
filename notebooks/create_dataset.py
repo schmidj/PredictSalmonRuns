@@ -13,12 +13,14 @@ fish_features = os.path.join(data_dir, "Brood_Return_First_Year_At_Sea_Tables", 
 pancea_features = os.path.join(data_dir, "GENERATED_pacea_series_annual.csv")
 sst_df = os.path.join(data_dir, "sst_april_july_by_region.csv")
 sss_fraser_df = os.path.join(data_dir, "Fraser_River/Departure_Bay_PBS/Departure_Bay_PBS_-_Average_Monthly_Sea_Surface_Salinities_1914-2025.csv")
+spawner_df = os.path.join(data_dir, "reforecastcompetitionsalmondatamobilization", "GENERATED_FullDataSet_LongForm.csv")
 
 # Load feature sheets
 fish_df = pd.read_csv(fish_features)
 pancea_df = pd.read_csv(pancea_features)
 sst_df = pd.read_csv(sst_df)
 sss_fraser_df = pd.read_csv(sss_fraser_df, skiprows=1)
+spawner_df = pd.read_csv(spawner_df, skiprows=3)
 
 #%% Prepare fish_df
 # Rename ReturnYear for clarity
@@ -68,9 +70,13 @@ fraser_mask = combined_df['System'] == 'Fraser River'
 combined_df.loc[fraser_mask, ['sss_aprjun', 'sss_mayaug']] = combined_df[fraser_mask].merge(
     sss_fraser_df, how='left', on='Year')[['sss_aprjun', 'sss_mayaug']].values
 
+# Add Total_Spawners_BroodYear
+spawner_summary = spawner_df.groupby('BroodYear', as_index=False)['Total_Spawners_BroodYear'].sum()
+combined_df = combined_df.merge(spawner_summary, how='left', left_on='Year', right_on='BroodYear')
+
 # Drop rows where target is missing (i.e., last year of each group) and index column
 combined_df = combined_df.dropna(subset=['Total_Returns_NextYear'])
-combined_df = combined_df.drop(columns=["Unnamed: 0"])
+combined_df = combined_df.drop(columns=["Unnamed: 0", "BroodYear"])
 
 #%% Check for constant columns
 constant_cols = [col for col in combined_df.columns if combined_df[col].nunique() <= 1]
