@@ -26,7 +26,7 @@ pacea.annual <- full_join(alpi %>% dplyr::rename(Pacea_ALPI_Anomaly = anomaly),
                           npi_annual %>% dplyr::rename(Pacea_NPI_Value = value,Pacea_NPI_Anomaly = anomaly),
                           by=c("year")) %>% dplyr::rename(Year = year)
 pacea.annual <- pacea.annual %>%
-  filter(Year %in% 1960:2025)
+  filter(Year %in% 1947:2025)
 
 
 
@@ -62,7 +62,7 @@ pacea.annual <- pacea.annual %>%
 # Compute winter means of ONI (Dec - Feb)
 oni_seasonal_means <- oni %>%
   # Include one extra year before to catch December of previous year
-  filter(year %in% 1948:2025) %>%
+  filter(year %in% 1947:2025) %>%
   
   # Create a date column
   mutate(date = make_date(year, month, 1)) %>%
@@ -74,7 +74,7 @@ oni_seasonal_means <- oni %>%
   mutate(season_year = if_else(month == 12, year + 1, year)) %>%
   
   # Keep only seasons that end in desired years
-  filter(season_year %in% 1948:2025) %>%
+  filter(season_year %in% 1947:2025) %>%
   
   # Group and summarise
   group_by(season_year) %>%
@@ -90,7 +90,7 @@ pacea.annual <- pacea.annual %>%
 # Compute summer means of ONI (Apr - Sep)
 mei_seasonal_means <- mei %>%
   # Keep relevant months and years
-  filter(year %in% 1948:2025, month %in% 4:9) %>%
+  filter(year %in% 1947:2025, month %in% 4:9) %>%
   
   # Create date column (optional, for consistency)
   mutate(date = make_date(year, month, 1)) %>%
@@ -109,7 +109,7 @@ pacea.annual <- pacea.annual %>%
 # Compute winter means of NPGO (Dec - Feb)
 npgo_seasonal_means <- npgo %>%
   # Include Dec of the previous year
-  filter(year %in% 1948:2025, month %in% c(12, 1, 2)) %>%
+  filter(year %in% 1947:2025, month %in% c(12, 1, 2)) %>%
   
   # Create a date column (optional)
   mutate(date = make_date(year, month, 1)) %>%
@@ -118,7 +118,7 @@ npgo_seasonal_means <- npgo %>%
   mutate(season_year = if_else(month == 12, year + 1, year)) %>%
   
   # Keep only target years
-  filter(season_year %in% 1948:2025) %>%
+  filter(season_year %in% 1947:2025) %>%
   
   # Group and summarise
   group_by(season_year) %>%
@@ -134,7 +134,7 @@ pacea.annual <- pacea.annual %>%
 # Compute winter means of NPGO (Dec - Mar)
 ao_seasonal_means <- ao %>%
   # Include Dec of the previous year
-  filter(year %in% 1948:2025, month %in% c(12, 1, 2, 3)) %>%
+  filter(year %in% 1947:2025, month %in% c(12, 1, 2, 3)) %>%
   
   # Create date (optional)
   mutate(date = make_date(year, month, 1)) %>%
@@ -143,7 +143,7 @@ ao_seasonal_means <- ao %>%
   mutate(season_year = if_else(month == 12, year + 1, year)) %>%
   
   # Filter to desired output range
-  filter(season_year %in% 1948:2025) %>%
+  filter(season_year %in% 1947:2025) %>%
   
   # Group and calculate mean
   group_by(season_year) %>%
