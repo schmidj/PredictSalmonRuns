@@ -5,20 +5,23 @@ This project aims to model and predict salmon returns across different river sys
 ## Project Description
 
 Salmon runs are complex ecological events influenced by multiple factors across freshwater and marine environments. 
-This project integrates data from brood tables, return tables, and marine entry records to predict the number of returning salmon for specific rivers and systems.
+This project integrates data from return tables, oceanographic data and environmental data to predict the number of returning salmon for specific rivers at three river systems.
 
 Key components of the project include:
 
-- **Brood Year Analysis**: Tracks the number of juvenile salmon by age class and year.
-- **Return Year Analysis**: Captures observed returns, used to validate recruitment predictions.
-- **First Year at Sea**: Estimates of marine entry and early marine survival by age class.
-- **Environmental Covariates**: Incorporates sea surface temperature, salinity, dissolved oxygen, and large-scale climate indices (e.g., PDO, NPGO, MEI).
-- **Machine Learning Models**: Applied to forecast salmon returns based on prior brood years and environmental drivers.
+- **Data Extraction and Merging**: Extract data from different sources (e.g., PANCEA) and merge them to get annual samples for each river (14 rivers in total).
+- **Data Analysis**: Visualize data and look for correlations between the differend variables.
+- **Machine Learning Models**: Apply different Machine Learning Models (e.g., GBRT) to forecast salmon returns based on (XXX) features.
 
 ## Data Sources
 
-- Angler's Atlas provided brood and return tables (by river and system).
-- Marine entry age-class data.
+Features in Combined_FeatureSet_For_Model.csv for predicting Total_Returns_NextYear:
+- Total_Returns and 18 Age Classes: Return tables (by river and system) provided by Angler's Atlas
+- Total_Spawners_BroodYear: Data provided by Gottfried Pestal
+- Pacea_ALPI_Anomaly, npi_mean_NovMar, oni_mean_DecFeb, mei_mean_AprSep, npgo_mean_DecFeb, ao_mean_DecMar, pdo_mean_DecMar, pdo_mean_MaySep: recieved from [pacea R package](https://github.com/pbs-assess/pacea) (downloaded 06/16/2025), see notebooks/get_pacea_data.R
+- sst_aprjul, sst_anom: NOAA Extended Reconstructed SST V5 data provided by the NOAA PSL, Boulder, Colorado, USA, from their website at https://psl.noaa.gov, see notebooks/get_SST_v5.py
+- sss_aprjun, sss_mayaug: Fraser River: Departure Bay (PBS, Lat: 49.21, Lon: -123.955) monthly from  [BC Lightstations]{https://open.canada.ca/data/en/dataset/719955f2-bf8e-44f7-bc26-6bd623e82884/resource/0082007f-5f76-4adb-9c7e-f325e4f838c8}
+
 - Environmental data from the [pacea R package](https://github.com/pbs-assess/pacea), including:
   - Oceanographic variables from BCCM and HOTSSea models.
   - Climatic indices like PDO, NPGO, MEI, etc.
@@ -26,7 +29,7 @@ Key components of the project include:
 
 ## Goals
 
-- Predict future salmon runs to support fisheries management.
+- Predict salmon runs in 2025 for the [Salmon Prize Project]{https://salmonprize.com/}.
 
 ## Tech Stack
 
