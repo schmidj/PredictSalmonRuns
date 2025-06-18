@@ -20,8 +20,10 @@ Features in Combined_FeatureSet_For_Model.csv for predicting Total_Returns_NextY
 - Total_Spawners_BroodYear: Data provided by Gottfried Pestal
 - Pacea_ALPI_Anomaly, npi_mean_NovMar, oni_mean_DecFeb, mei_mean_AprSep, npgo_mean_DecFeb, ao_mean_DecMar, pdo_mean_DecMar, pdo_mean_MaySep: recieved from [pacea R package](https://github.com/pbs-assess/pacea) (downloaded 06/16/2025), see notebooks/get_pacea_data.R
 - sst_aprjul, sst_anom: NOAA Extended Reconstructed SST V5 data provided by the NOAA PSL, Boulder, Colorado, USA, from their website at https://psl.noaa.gov, see notebooks/get_SST_v5.py
-- sss_aprjun, sss_mayaug: Fraser River: Departure Bay (PBS, Lat: 49.21, Lon: -123.955) monthly from  [BC Lightstations]{https://open.canada.ca/data/en/dataset/719955f2-bf8e-44f7-bc26-6bd623e82884/resource/0082007f-5f76-4adb-9c7e-f325e4f838c8}
-
+- sss_aprjun, sss_mayaug: (lat_min, lat_max, lon_min, lon_max) BristolBay: (54, 60, -165, -155), ColumbiaRiver: (45, 48, -125, -121), FraserRiver: (48, 51, -126, -121)
+	- Fraser River: Departure Bay (PBS, Lat: 49.21, Lon: -123.955) monthly from  [BC Lightstations]{https://open.canada.ca/data/en/dataset/719955f2-bf8e-44f7-bc26-6bd623e82884/resource/0082007f-5f76-4adb-9c7e-f325e4f838c8}
+	- Columbia River and Bristol Bay: [Met Office Hadley Centre observation datasets EN.4.2.2-C13]{https://www.metoffice.gov.uk/hadobs/en4/} (Cowley et al. (2013) XBT corrections and Levitus et al (2009) MBT corrections)
+	
 - Environmental data from the [pacea R package](https://github.com/pbs-assess/pacea), including:
   - Oceanographic variables from BCCM and HOTSSea models.
   - Climatic indices like PDO, NPGO, MEI, etc.
