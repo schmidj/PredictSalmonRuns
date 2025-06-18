@@ -3,8 +3,8 @@ import requests
 import os
 
 base_url = "http://www.metoffice.gov.uk/hadobs/en4/data/en4-2-1/EN.4.2.2/"
-start_year = 1950
-end_year = 1954
+start_year = 1942
+end_year = 2024
 output_folder = "en4_analysis_zips"
 
 os.makedirs(output_folder, exist_ok=True)

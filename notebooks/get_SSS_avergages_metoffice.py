@@ -40,7 +40,7 @@ def extract_avg_sss(nc_path, lat_bounds, lon_bounds):
 # Main loop
 results = []
 
-for year in range(1950, 2025):
+for year in range(1942, 2025):
     sss_values = {"Year": year}
 
     for region, (lat_min, lat_max, lon_min, lon_max) in regions.items():
