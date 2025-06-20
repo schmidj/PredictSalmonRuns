@@ -8,3 +8,4 @@
 #tables/all_regions_stream_decoder.csv
 
 src/__pycache__/
+data/ersst.v5
