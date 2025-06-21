@@ -9,6 +9,7 @@ if(FALSE){
 library(tidyverse)
 library(pacea)
 library(lubridate)
+library(forecast)
 
 # check date of current install
 pacea_installed()
@@ -22,11 +23,50 @@ pacea_installed()
 # using this to populate the settings list
 help(package = "pacea")
 
+# Prepare ALPI anomaly time series from 1947 to 2022
+alpi_ts <- alpi %>%
+  filter(year >= 1947 & year <= 2022) %>%
+  arrange(year) %>%
+  pull(anomaly) %>%
+  ts(start = 1947, frequency = 1)
+
+# Fit a more dynamic ARIMA model: ARIMA(1,1,1)
+alpi_model <- Arima(alpi_ts, order = c(1,1,1))
+
+# Forecast 2 years ahead
+alpi_forecast <- forecast(alpi_model, h = 2)
+
+# Create a data frame for forecasted values (2023, 2024)
+alpi_forecast_df <- tibble(
+  year = 2023:2024,
+  anomaly = as.numeric(alpi_forecast$mean)
+)
+
+# Remove existing 2023–2024 rows before appending forecast
+alpi_cleaned <- alpi %>% filter(!year %in% 2023:2024)
+
+# Append forecasted values and arrange
+alpi_extended <- bind_rows(
+  alpi_cleaned,
+  alpi_forecast_df
+) %>%
+  arrange(year)
+
+# Replace the original alpi variable used in the join
+alpi <- alpi_extended
+
+
+
+
 pacea.annual <- full_join(alpi %>% dplyr::rename(Pacea_ALPI_Anomaly = anomaly),
                           npi_annual %>% dplyr::rename(Pacea_NPI_Value = value,Pacea_NPI_Anomaly = anomaly),
                           by=c("year")) %>% dplyr::rename(Year = year)
 pacea.annual <- pacea.annual %>%
   filter(Year %in% 1947:2025)
+
+
+
+
 
 
 
