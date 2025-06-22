@@ -1,0 +1,24 @@
+
+FIRST APPROACH: correlation between features and label only on (data train)
+
+
+pipe line first: missing values and others
+    BristolBay_FeatureSet_For_Model >> data_set_bristol_encoded
+
+pipe line second: split
+    data_set_bristol_encoded >> data_train.to_csv
+                            data_test.to_csv
+
+pipe line third: One hot encoder
+
+
+***********************************************************
+SECOND APRROACH: train using all features and later do the feature importance
+
+pile line first: missing values
+pipe line second split 
+pipe line third one hot enconder
+
+    ALL features
+    TOP 10
+    TOP 5
