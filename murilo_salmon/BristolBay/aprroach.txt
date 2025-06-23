@@ -1,6 +1,8 @@
 
 FIRST APPROACH: correlation between features and label only on (data train)
-
+    ALL_FEATURES
+    TOP_5 FEATURES
+    TOP_10 FEATURES
 
 pipe line first: missing values and others
     BristolBay_FeatureSet_For_Model >> data_set_bristol_encoded
@@ -13,7 +15,10 @@ pipe line third: One hot encoder
 
 
 ***********************************************************
-SECOND APRROACH: train using all features and later do the feature importance
+SECOND APRROACH: train the model using all features and later do the feature importance
+    ALL_FEATURES
+    TOP_5 FEATURES
+    TOP_10 FEATURES
 
 pile line first: missing values
 pipe line second split 
@@ -21,33 +26,35 @@ pipe line third one hot enconder
 
 *********************************************************
 
-FISRT_APPROACH
-ALL FEATURES
+FISRT_APPROACH 🥇
+ALL FEATURES 🥇
 
+FIRST_APPROACH
+ALL_FEATURES
 Gradient Boosting Evaluation Metrics:
-R²   (R-squared):              -0.3453
-MSE  (Mean Squared Error):     31465912161608.78
-MAPE (Mean Absolute % Error):  50.04%
+R²   (R-squared):              -0.3463
+MSE  (Mean Squared Error):     31489770821475.74
+MAPE (Mean Absolute % Error):  50.08%
 
 Polynomial Regression Evaluation Metrics:
-R²   (R-squared):              -357290.7747
-MSE  (Mean Squared Error):     8357134698325957632.00
-MAPE (Mean Absolute % Error):  5704.72%
+R²   (R-squared):              -357290.7859
+MSE  (Mean Squared Error):     8357134960230387712.00
+MAPE (Mean Absolute % Error):  5705.11%
 
 Linear Regression Evaluation Metrics:
 R²   (R-squared):              -0.1660
-MSE  (Mean Squared Error):     27271938218871.29
-MAPE (Mean Absolute % Error):  53.20%
+MSE  (Mean Squared Error):     27274125813445.65
+MAPE (Mean Absolute % Error):  53.27%
 
 Random Forest Evaluation Metrics:
-R²   (R-squared):              -0.1512
-MSE  (Mean Squared Error):     26926261135373.15
-MAPE (Mean Absolute % Error):  47.20%
+R²   (R-squared):              -0.1511
+MSE  (Mean Squared Error):     26924853101710.23
+MAPE (Mean Absolute % Error):  47.21%
 
-Log-Transformed Random Forest Evaluation Metrics:
-R²   (R-squared):              0.2955
-MSE  (Mean Squared Error):     16478499798836.47
-MAPE (Mean Absolute % Error):  39.50%
+Log-Transformed Random Forest Evaluation Metrics: 🥇
+R²   (R-squared):              0.2957
+MSE  (Mean Squared Error):     16473257419187.02
+MAPE (Mean Absolute % Error):  39.51%
 
 XGBoost Evaluation Metrics:
 R²   (R-squared):              -0.1194
@@ -55,91 +62,86 @@ MSE  (Mean Squared Error):     26183788053661.45
 MAPE (Mean Absolute % Error):  43.69%
 
 
-
 FIRST_APPROACH
 TOP_5 FEATURES
-
-Gradient Boosting (Top 5 Correlated Features)
+ Gradient Boosting (Top 5 Correlated Features)
 R²   (R-squared):              -0.6578
 MSE  (Mean Squared Error):     38776794394858.55
 MAPE (Mean Absolute % Error):  46.29%
 
-Gradient Boosting (Top 5 Correlated + Log Target)
+ Gradient Boosting (Top 5 Correlated + Log Target)
 R²   (R-squared):              0.1906
 MSE  (Mean Squared Error):     18931241432454.38
 MAPE (Mean Absolute % Error):  38.55%
 
-Polynomial Regression (Top 5 Correlated Features)
+ Polynomial Regression (Top 5 Correlated Features)
 R²   (R-squared):              -0.1751
 MSE  (Mean Squared Error):     27486674565123.46
 MAPE (Mean Absolute % Error):  45.09%
 
-Linear Regression (Top 5 Correlated Features)
+ Linear Regression (Top 5 Correlated Features)
 R²   (R-squared):              -0.0532
 MSE  (Mean Squared Error):     24634189615675.81
 MAPE (Mean Absolute % Error):  49.71%
 
-Random Forest (Top 5 Correlated Features)
+ Random Forest (Top 5 Correlated Features)
 R²   (R-squared):              -0.0420
 MSE  (Mean Squared Error):     24371512160585.58
 MAPE (Mean Absolute % Error):  45.60%
 
-XGBoost (Top 5 Correlated Features)
+ XGBoost (Top 5 Correlated Features)
 R²   (R-squared):              -0.8732
 MSE  (Mean Squared Error):     43815114619895.70
 MAPE (Mean Absolute % Error):  49.60%
 
-
 FIRST_APPROACH
 TOP_10 FEATURES
-
 Gradient Boosting (Top 10 Correlated Features)
 R²   (R-squared):              -0.1214
 MSE  (Mean Squared Error):     26228693734058.05
 MAPE (Mean Absolute % Error):  41.79%
 
-Polynomial Regression (Top 10 Correlated Features)
+ Polynomial Regression (Top 10 Correlated Features)
 R²   (R-squared):              -0.3645
 MSE  (Mean Squared Error):     31917109847466.66
 MAPE (Mean Absolute % Error):  39.87%
 
-Linear Regression (Top 10 Correlated Features)
+ Linear Regression (Top 10 Correlated Features)
 R²   (R-squared):              -0.1251
 MSE  (Mean Squared Error):     26316511360602.55
 MAPE (Mean Absolute % Error):  47.53%
 
-Random Forest (Top 10 Correlated Features)
+ Random Forest (Top 10 Correlated Features)
 R²   (R-squared):              -0.0159
 MSE  (Mean Squared Error):     23761948201464.99
 MAPE (Mean Absolute % Error):  44.64%
 
-XGBoost (Top 10 Correlated Features)
+ XGBoost (Top 10 Correlated Features)
 R²   (R-squared):              -0.2675
 MSE  (Mean Squared Error):     29647535065498.41
 MAPE (Mean Absolute % Error):  44.87%
 
-***********************************************************************
 SECOND APRROACH
 ALL FEATURES
 Gradient Boosting Evaluation Metrics:
-R²   (R-squared):              -0.3453
-MSE  (Mean Squared Error):     31465912161608.78
-MAPE (Mean Absolute % Error):  50.04%
+R²   (R-squared):              -0.3463
+MSE  (Mean Squared Error):     31489770821475.74
+MAPE (Mean Absolute % Error):  50.08%
 
  Polynomial Regression (All Features, Degree=2)
-R²   (R-squared):              -357290.7747
-MSE  (Mean Squared Error):     8357134698325957632.00
-MAPE (Mean Absolute % Error):  5704.72%
+R²   (R-squared):              -357290.7859
+MSE  (Mean Squared Error):     8357134960230387712.00
+MAPE (Mean Absolute % Error):  5705.11%
 
  Linear Regression (All Features)
 R²   (R-squared):              -0.1660
-MSE  (Mean Squared Error):     27271938218871.29
-MAPE (Mean Absolute % Error):  53.20%
+MSE  (Mean Squared Error):     27274125813445.65
+MAPE (Mean Absolute % Error):  53.27%
 
  Random Forest (All Features)
-R²   (R-squared):              -0.2373
-MSE  (Mean Squared Error):     28941047083640.40
-MAPE (Mean Absolute % Error):  49.48%
+R²   (R-squared):              -0.2372
+MSE  (Mean Squared Error):     28938065745148.36
+MAPE (Mean Absolute % Error):  49.50%
 
  XGBoost (All Features)
 R²   (R-squared):              -0.1194
@@ -148,11 +150,20 @@ MAPE (Mean Absolute % Error):  43.69%
 
 SECOND APRROACH
 TOP_5 FEATURES
+ Gradient Boosting (Top 5 Features)
+R²   (R-squared):              -0.5407
+MSE  (Mean Squared Error):     36036524516920.46
+MAPE (Mean Absolute % Error):  52.44%
 
- XGBoost (Top 5 Features)
-R²   (R-squared):              -0.4952
-MSE  (Mean Squared Error):     34973601838449.54
-MAPE (Mean Absolute % Error):  51.98%
+ Polynomial Regression (Top 5 Poly Features)
+R²   (R-squared):              -0.3965
+MSE  (Mean Squared Error):     32664430682237.86
+MAPE (Mean Absolute % Error):  58.93%
+
+ Linear Regression (Top 5 Features)
+R²   (R-squared):              -0.1418
+MSE  (Mean Squared Error):     26707822325695.32
+MAPE (Mean Absolute % Error):  50.38%
 
 
  Random Forest (Top 5 Features)
@@ -160,27 +171,14 @@ R²   (R-squared):              -0.2437
 MSE  (Mean Squared Error):     29091286019282.12
 MAPE (Mean Absolute % Error):  52.35%
 
- Linear Regression (Top 5 Features)
-R²   (R-squared):              -0.1418
-MSE  (Mean Squared Error):     26707822325695.32
-MAPE (Mean Absolute % Error):  50.38%
 
- Polynomial Regression (Top 5 Poly Features)
-R²   (R-squared):              -0.3965
-MSE  (Mean Squared Error):     32664430682237.86
-MAPE (Mean Absolute % Error):  58.93%
-
-
- Gradient Boosting (Top 5 Features)
-R²   (R-squared):              -0.5407
-MSE  (Mean Squared Error):     36036524516920.46
-MAPE (Mean Absolute % Error):  52.44%
-
-
+ XGBoost (Top 5 Features)
+R²   (R-squared):              -0.4952
+MSE  (Mean Squared Error):     34973601838449.54
+MAPE (Mean Absolute % Error):  51.98%
 
 SECOND APRROACH
 TOP_10 FEATURES
-
  Gradient Boosting (Top 10 Features)
 R²   (R-squared):              -0.3465
 MSE  (Mean Squared Error):     31494070726135.64
@@ -191,7 +189,6 @@ R²   (R-squared):              -0.2484
 MSE  (Mean Squared Error):     29201264966607.94
 MAPE (Mean Absolute % Error):  64.04%
 
-
  Linear Regression (Top 10 Features)
 R²   (R-squared):              -0.0828
 MSE  (Mean Squared Error):     25326243498874.31
@@ -201,7 +198,6 @@ MAPE (Mean Absolute % Error):  50.32%
 R²   (R-squared):              -0.1216
 MSE  (Mean Squared Error):     26235273674602.96
 MAPE (Mean Absolute % Error):  48.95%
-
 
  XGBoost (Top 10 Features)
 R²   (R-squared):              -0.2599
