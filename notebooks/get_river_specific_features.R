@@ -35,7 +35,7 @@ fraser_data <- map_df(fraser_sites$STATION_NUMBER, function(site) {
       mutate(Year = year(date), Month = month(date)) %>%
       filter(Month %in% spring_summer) %>%
       group_by(Year) %>%
-      summarise(discharge_AprSep = mean(Value, na.rm = TRUE)) %>%
+      summarise(max_discharge_AprSep = max(Value, na.rm = TRUE)) %>%
       mutate(System = "Fraser", River = fraser_sites$STATION_NAME[fraser_sites$STATION_NUMBER == site],
              DataSource = "WSC")
   }, error = function(e) NULL)
@@ -133,7 +133,6 @@ combined_df <- combined_df %>%
   mutate(System = ifelse(System == "Fraser", "Fraser River", System))
 
 # ---- 4. More Features from USGS (temperature and discharge) ---- #
-# You can insert this earlier in the USGS loop too if needed
 us_extra <- map_df(us_sites$site_no, function(site) {
   message("Extra features for site: ", site)
   tryCatch({
@@ -158,7 +157,21 @@ us_extra <- map_df(us_sites$site_no, function(site) {
 
 # Merge new features into combined
 combined_df <- combined_df %>%
-  full_join(us_extra, by = c("River_original", "Year", "System", "DataSource"))
+  full_join(us_extra, by = c("River_original", "Year", "System", "DataSource")) %>%
+  mutate(
+    max_discharge_AprSep = coalesce(max_discharge_AprSep.x, max_discharge_AprSep.y)
+  ) %>%
+  select(-max_discharge_AprSep.x, -max_discharge_AprSep.y)
+
+# Convert unit of discharge
+combined_df <- combined_df %>%
+  mutate(
+    max_discharge_AprSep = if_else(
+      DataSource == "USGS",
+      max_discharge_AprSep * 0.0283168,  # convert cfs to m³/s
+      max_discharge_AprSep               # leave HYDAT data unchanged
+    )
+  )
 
 # Rearrange and export
 combined_df <- combined_df %>%
