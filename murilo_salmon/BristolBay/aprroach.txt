@@ -1,10 +1,9 @@
+ALL_FEATURES | TOP_5 FEATURES | TOP_10 FEATURES
 
-FIRST APPROACH: correlation between features and label only on (data train)
-    ALL_FEATURES
-    TOP_5 FEATURES
-    TOP_10 FEATURES
+FIRST APPROACH: 🥇
+    correlation between features and label only on (data train)
 
-pipe line first: missing values and others
+pipe line first: missing values or drop columns
     BristolBay_FeatureSet_For_Model >> data_set_bristol_encoded
 
 pipe line second: split
@@ -13,18 +12,20 @@ pipe line second: split
 
 pipe line third: One hot encoder
 
-
 ***********************************************************
-SECOND APRROACH: train the model using all features and later do the feature importance
-    ALL_FEATURES
-    TOP_5 FEATURES
-    TOP_10 FEATURES
+SECOND APRROACH: 
+    train the model using all features and later do the feature importance
 
-pile line first: missing values
+pile line first: missing values or drop columns
 pipe line second split 
 pipe line third one hot enconder
 
 *********************************************************
+
+THIRD APPROACH (Alagnak river) 🥇
+    pipe line first: missing values or drop columns
+    Split the data for each river Do the correlation between  features and label
+
 
 FISRT_APPROACH 🥇
 ALL FEATURES 🥇
@@ -55,6 +56,19 @@ Log-Transformed Random Forest Evaluation Metrics: 🥇
 R²   (R-squared):              0.2957
 MSE  (Mean Squared Error):     16473257419187.02
 MAPE (Mean Absolute % Error):  39.51%
+
++----------+------------------------+--------------------+--------------------+--------------------+
+|  River   | Total_Returns_NextYear | Predicted_Returns  |   Absolute_Error   |      APE (%)       |
++----------+------------------------+--------------------+--------------------+--------------------+
+| Alagnak  |    4335434.71638467    | 1887977.4886300133 | 2447457.227754656  | 56.45240645661474  |
+|  Egegik  |    4629742.7343397     |  11563996.3633467  |   6934253.629007   | 149.77621926104652 |
+| Igushik  |    1572250.10905134    | 1191758.202219095  | 380491.90683224495 | 24.20046941906877  |
+| Kvichak  |    12207052.9844853    | 6763470.838103057  | 5443582.146382243  | 44.593745544488335 |
+|  Naknek  |    3160468.81052516    | 5915060.992632296  | 2754592.182107136  | 87.15770815183014  |
+| Nushagak |    5629034.74787806    | 4623395.392922756  | 1005639.3549553035 | 17.865218461022874 |
+| Ugashik  |    7955574.46845177    | 4188965.9666302833 | 3766608.5018214867 | 47.34552503729507  |
+|   Wood   |    12276225.3959476    | 7900287.032614272  | 4375938.363333328  | 35.64563391592526  |
++----------+------------------------+--------------------+--------------------+--------------------+
 
 XGBoost Evaluation Metrics:
 R²   (R-squared):              -0.1194
@@ -94,6 +108,7 @@ R²   (R-squared):              -0.8732
 MSE  (Mean Squared Error):     43815114619895.70
 MAPE (Mean Absolute % Error):  49.60%
 
+
 FIRST_APPROACH
 TOP_10 FEATURES
 Gradient Boosting (Top 10 Correlated Features)
@@ -120,6 +135,8 @@ MAPE (Mean Absolute % Error):  44.64%
 R²   (R-squared):              -0.2675
 MSE  (Mean Squared Error):     29647535065498.41
 MAPE (Mean Absolute % Error):  44.87%
+
+
 
 SECOND APRROACH
 ALL FEATURES
@@ -148,6 +165,8 @@ R²   (R-squared):              -0.1194
 MSE  (Mean Squared Error):     26183788053661.45
 MAPE (Mean Absolute % Error):  43.69%
 
+
+
 SECOND APRROACH
 TOP_5 FEATURES
  Gradient Boosting (Top 5 Features)
@@ -165,17 +184,17 @@ R²   (R-squared):              -0.1418
 MSE  (Mean Squared Error):     26707822325695.32
 MAPE (Mean Absolute % Error):  50.38%
 
-
  Random Forest (Top 5 Features)
 R²   (R-squared):              -0.2437
 MSE  (Mean Squared Error):     29091286019282.12
 MAPE (Mean Absolute % Error):  52.35%
 
-
  XGBoost (Top 5 Features)
 R²   (R-squared):              -0.4952
 MSE  (Mean Squared Error):     34973601838449.54
 MAPE (Mean Absolute % Error):  51.98%
+
+
 
 SECOND APRROACH
 TOP_10 FEATURES
@@ -203,3 +222,154 @@ MAPE (Mean Absolute % Error):  48.95%
 R²   (R-squared):              -0.2599
 MSE  (Mean Squared Error):     29468629201818.11
 MAPE (Mean Absolute % Error):  45.48%
+
+
+THIRD APPROACH ONLY RIVER ALAGNAK
+ALL_FEATURES | TOP_10 | TOP_5
+
+ALL FEATURES
+RIVER ALAGNAK
+SPLIT USING split_time_series_by_river
+
+Gradient Boosting Evaluation Metrics (Alagnak only):
+R²   (R-squared):              -0.2892
+MSE  (Mean Squared Error):     4492895261717.67
+MAPE (Mean Absolute % Error):  57.39%
+
+Polynomial Regression Evaluation Metrics (Alagnak only):
+R²   (R-squared):              -966.7214
+MSE  (Mean Squared Error):     3372608856177959.00
+MAPE (Mean Absolute % Error):  885.30%
+
+Linear Regression Evaluation Metrics (Alagnak only):
+R²   (R-squared):              -1.1044
+MSE  (Mean Squared Error):     7333952290072.80
+MAPE (Mean Absolute % Error):  52.25%
+
+Random Forest Evaluation Metrics (Alagnak only):
+R²   (R-squared):              -0.0160
+MSE  (Mean Squared Error):     3540965175389.54
+MAPE (Mean Absolute % Error):  41.50%
+
+Random Forest with Log-Transformed Target (Alagnak only):
+R²   (R-squared):              -0.1764
+MSE  (Mean Squared Error):     4099991995453.86
+MAPE (Mean Absolute % Error):  38.16%
+
+Random Forest with Log-Transformed Target + GridSearchCV (Alagnak only):
+Best Parameters: {'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+R²   (R-squared):              -0.1764
+MSE  (Mean Squared Error):     4099991995453.86
+MAPE (Mean Absolute % Error):  38.16%
+
+XGBoost with Log-Transformed Target + GridSearchCV (Alagnak only):
+Best Parameters: {'learning_rate': 0.1, 'max_depth': 5, 'n_estimators': 100, 'subsample': 1.0}
+R²   (R-squared):              -0.4024
+MSE  (Mean Squared Error):     4887448668556.11
+MAPE (Mean Absolute % Error):  41.14%
+
+XGBoost Evaluation Metrics (Alagnak only):
+R²   (R-squared):              -0.2029
+MSE  (Mean Squared Error):     4192232808210.61
+MAPE (Mean Absolute % Error):  40.71%
+
+
+TOP_5FEATURES
+RIVER ALAGNAK
+
+XGBoost Evaluation Metrics (Alagnak, Top 5 Features):
+R²   (R-squared):              -0.5371
+MSE  (Mean Squared Error):     5357056401245.84
+MAPE (Mean Absolute % Error):  39.73%
+
+Random Forest + Log-Transformed Target + GridSearchCV (Alagnak only):
+Best Params: {'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+R²   (R-squared):              -0.1759
+MSE  (Mean Squared Error):     4098123944277.75
+MAPE (Mean Absolute % Error):  38.34%
+
+Random Forest (Log-Transformed Target, Alagnak, Top 5 Features):
+R²   (R-squared):              -0.1759
+MSE  (Mean Squared Error):     4098123944277.75
+MAPE (Mean Absolute % Error):  38.34%
+
+Random Forest Evaluation Metrics (Alagnak, Top 5 Features):
+R²   (R-squared):              0.0279
+MSE  (Mean Squared Error):     3387827771387.86
+MAPE (Mean Absolute % Error):  37.83%
+
+Linear Regression Evaluation Metrics (Alagnak, Top 5 Features):
+R²   (R-squared):              -0.0057
+MSE  (Mean Squared Error):     3505119590088.69
+MAPE (Mean Absolute % Error):  43.00%
+
+Polynomial Regression Evaluation Metrics (Alagnak, Top 5 Features):
+R²   (R-squared):              -8.9053
+MSE  (Mean Squared Error):     34520918413847.94
+MAPE (Mean Absolute % Error):  93.28%
+
+Gradient Boosting Evaluation Metrics (Alagnak, Top 5 Features):
+R²   (R-squared):              -0.3510
+MSE  (Mean Squared Error):     4708289969601.53
+MAPE (Mean Absolute % Error):  40.46%
+
+
+ALAGNAK RIVER
+TOP 10 FEATURES 🏆
+
+XGBoost Evaluation Metrics (Alagnak, Top 10 Features):
+R²   (R-squared):              -0.5278
+MSE  (Mean Squared Error):     5324529037171.48
+MAPE (Mean Absolute % Error):  35.78%
+
+Random Forest + Log-Transformed Target + GridSearchCV (Alagnak, Top 10 Features):
+Best Params: {'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 200}
+R²   (R-squared):              -0.2206
+MSE  (Mean Squared Error):     4253974674981.10
+MAPE (Mean Absolute % Error):  35.19%
+
+Random Forest with Log-Transformed Target (Alagnak, Top 10 Features):
+R²   (R-squared):              -0.1743
+MSE  (Mean Squared Error):     4092706095082.66
+MAPE (Mean Absolute % Error):  35.87%
+
+Random Forest Evaluation Metrics (Alagnak, Top 10 Features): 🏆
+R²   (R-squared):              0.0283
+MSE  (Mean Squared Error):     3386374415202.25
+MAPE (Mean Absolute % Error):  35.77%
+
++----------+---------------------+------------+------------------+--------------------+
+| River    | Prediction (2023)   | Actual     | Absolute Error   | Percentage Error   |
++==========+=====================+============+==================+====================+
+| Alagnak  | 2,776,207           | 4,335,435  | 1,559,228        | 35.96%             |
++----------+---------------------+------------+------------------+--------------------+
+| Egegik   | 11,847,554          | 4,629,743  | 7,217,812        | 155.90%            |
++----------+---------------------+------------+------------------+--------------------+
+| Igushik  | 1,302,043           | 1,572,250  | 270,207          | 17.19%             |
++----------+---------------------+------------+------------------+--------------------+
+| Kvichak  | 7,623,441           | 12,207,053 | 4,583,612        | 37.55%             |
++----------+---------------------+------------+------------------+--------------------+
+| Naknek   | 6,907,285           | 3,160,469  | 3,746,816        | 118.55%            |
++----------+---------------------+------------+------------------+--------------------+
+| Nushagak | 4,782,360           | 5,629,035  | 846,675          | 15.04%             |
++----------+---------------------+------------+------------------+--------------------+
+| Ugashik  | 6,166,926           | 7,955,574  | 1,788,649        | 22.48%             |
++----------+---------------------+------------+------------------+--------------------+
+| Wood     | 9,991,814           | 12,276,225 | 2,284,411        | 18.61%             |
++----------+---------------------+------------+------------------+--------------------+
+
+Linear Regression Evaluation Metrics (Alagnak, Top 10 Features):
+R²   (R-squared):              -0.1972
+MSE  (Mean Squared Error):     4172539658250.78
+MAPE (Mean Absolute % Error):  34.19%
+
+Polynomial Regression Evaluation Metrics (Alagnak, Top 7 Features):
+R²   (R-squared):              -11.0061
+MSE  (Mean Squared Error):     41842410997153.58
+MAPE (Mean Absolute % Error):  101.14%
+
+Gradient Boosting Evaluation Metrics (Alagnak, Top 10 Features):
+R²   (R-squared):              -0.4140
+MSE  (Mean Squared Error):     4927932252224.54
+MAPE (Mean Absolute % Error):  38.63%
+
