@@ -1,3 +1,11 @@
+MURILO
+1 hyper parameters tuning
+2 r2 for traininig
+3 mape train and test 
+
+APPROACH: features importance after the train in 80 20
+
+
 ALL_FEATURES | TOP_5 FEATURES | TOP_10 FEATURES
 🥇
 
