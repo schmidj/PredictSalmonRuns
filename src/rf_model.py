@@ -3,20 +3,24 @@ import numpy as np
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import GridSearchCV
+from sklearn.feature_selection import SelectKBest, f_regression
 
-def train_and_apply_rf_with_tuning(train_df, test_df, target_col="Total_Returns_NextYear"):
+def train_and_apply_rf_with_tuning(train_df, test_df, topk_feat = 0, target_col="Total_Returns_NextYear"):
     """
-    Tunes and applies RandomForestRegressor using GridSearchCV.
+    Tunes and applies RandomForestRegressor using GridSearchCV and optionally selects a subset of featues.
 
     Args:
         train_df (pd.DataFrame): Training data.
         test_df (pd.DataFrame): Test data.
+        topk_feat (int): Number of features to select for model.
         target_col (str): Target variable to predict.
 
     Returns:
-        dict: MSE, predictions, actuals, feature importances, best params, timeline dataframe.
+        dict: R2, MSE, MAPE, predictions, actuals, feature importances, best params, timeline dataframe,
+        Metrics_by_System, Metrics_by_River.
     """
-    exclude_cols = ["System", "Year", target_col, "River_Name"]
+
+    exclude_cols = ["System", target_col, "River_Name", "Year"]
     features = [col for col in train_df.columns if col not in exclude_cols]
 
     X_train = train_df[features]
@@ -24,6 +28,18 @@ def train_and_apply_rf_with_tuning(train_df, test_df, target_col="Total_Returns_
 
     X_test = test_df[features]
     y_test = test_df[target_col]
+
+    # Optional: Select top k features with higheset scores
+    if (topk_feat > 0):
+        selector = SelectKBest(score_func=f_regression, k=topk_feat)
+        X_train_new = selector.fit_transform(X_train, y_train)
+        X_test_new = selector.transform(X_test)
+        selected_features = X_train.columns[selector.get_support()]
+        X_train = pd.DataFrame(X_train_new, columns=selected_features)
+        X_test = pd.DataFrame(X_test_new, columns=selected_features)
+
+    print("Selected features:")
+    print(X_train.columns)
 
     param_grid = {
         'n_estimators': [100, 200],
