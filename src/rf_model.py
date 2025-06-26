@@ -1,6 +1,7 @@
 import pandas as pd
+import numpy as np
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import GridSearchCV
 
 def train_and_apply_rf_with_tuning(train_df, test_df, target_col="Total_Returns_NextYear"):
@@ -36,11 +37,36 @@ def train_and_apply_rf_with_tuning(train_df, test_df, target_col="Total_Returns_
     grid_search.fit(X_train, y_train)
 
     best_model = grid_search.best_estimator_
+    predictions_train = best_model.predict(X_train)
     predictions = best_model.predict(X_test)
+
+    # Performance metrics
+    r2_train = r2_score(y_train, predictions_train)
+    mse_train = mean_squared_error(y_train, predictions_train)
+    mape_train = np.mean(np.abs((y_train - predictions_train) / y_test)) * 100
+
+    r2 = r2_score(y_test, predictions)
     mse = mean_squared_error(y_test, predictions)
+    mape = np.mean(np.abs((y_test - predictions) / y_test)) * 100
 
     print(f"Best Parameters: {grid_search.best_params_}")
+    print(f"Random Forest R2: {r2:.2f}")
     print(f"Random Forest MSE: {mse:.2f}")
+    print(f"Random Forest MAPE: {mape:.2f}")
+
+    # Metrics per System and River_Name
+    results_df = test_df.copy()
+    results_df["Predicted"] = predictions
+    results_df["Actual"] = y_test.values
+
+    def compute_group_metrics(df):
+        r2 = r2_score(df["Actual"], df["Predicted"])
+        mse = mean_squared_error(df["Actual"], df["Predicted"])
+        mape = np.mean(np.abs((df["Actual"] - df["Predicted"]) / df["Actual"])) * 100
+        return pd.Series({"R2": r2, "MSE": mse, "MAPE": mape})
+    
+    system_metrics = results_df.groupby("System").apply(compute_group_metrics).reset_index()
+    river_metrics = results_df.groupby("River_Name").apply(compute_group_metrics).reset_index()
     
     # Create timeline DataFrame using preserved river names
     timeline_df = test_df[["River_Name", "Year"]].copy()
@@ -48,10 +74,17 @@ def train_and_apply_rf_with_tuning(train_df, test_df, target_col="Total_Returns_
     timeline_df["Actual"] = y_test.values
 
     return {
+        "R2_train": r2_train,
+        "MSE_train": mse_train,
+        "MAPE_train": mape_train,
+        "R2": r2,
         "MSE": mse,
+        "MAPE": mape,
         "Predicted": predictions,
         "Actual": y_test.values,
         "Feature_Importances": dict(zip(features, best_model.feature_importances_)),
         "Best_Params": grid_search.best_params_,
-        "Timeline": timeline_df
+        "Timeline": timeline_df,
+        "Metrics_by_System": system_metrics,
+        "Metrics_by_River": river_metrics
     }
