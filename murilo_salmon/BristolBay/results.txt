@@ -1,0 +1,624 @@
+
+🔥
+
+
+===============================
+FIRSH APPROACH - ALL FEATURES
+Gradient Boosting Evaluation Metrics:
+R²   (R-squared test):          0.1627
+R²   (R-squared train):         0.9975
+MSE  (Mean Squared Error):      19936261469386.47
+MAPE (Mean Absolute % Error):   44.73%
+
+
+===============================
+FIRSH APPROACH - ALL FEATURES
+Polynomial Regression Evaluation Metrics:
+R²   (R-squared test):          -1162.8503
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Error):      27710397213480312.00
+MAPE (Mean Absolute % Error):   792.85%
+
+
+===============================
+FIRSH APPROACH - ALL FEATURES
+Linear Regression Evaluation Metrics:
+R²   (R-squared test):          0.1307
+R²   (R-squared train):         0.6878
+MSE  (Mean Squared Error):      20696362484617.75
+MAPE (Mean Absolute % Error):   48.95%
+
+
+===============================
+FIRSH APPROACH - ALL FEATURES
+Random Forest Evaluation Metrics:
+R²   (R-squared test):          0.2871
+R²   (R-squared train):         0.9084
+MSE  (Mean Squared Error):      16974094863520.62
+MAPE (Mean Absolute % Error):   39.25%
+
+
+===============================
+FIRSH APPROACH - ALL FEATURES
+Log-Transformed Random Forest Evaluation Metrics:
+R²   (R-squared test):          0.2148
+R²   (R-squared train):         0.9343
+MSE  (Mean Squared Error):      18694782378841.16
+MAPE (Mean Absolute % Error):   37.75%
+
+
+===============================
+FIRSH APPROACH - ALL FEATURES
+XGBoost Evaluation Metrics:
+R²   (R-squared test):          -0.0373
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Error):      24696531534541.34
+MAPE (Mean Absolute % Error):   48.36%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+Gradient Boosting:
+R²   (R-squared test):          0.2453
+R²   (R-squared train):         0.9921
+MSE  (Mean Squared Error):      17968063458677.97
+MAPE (Mean Absolute % Error):   48.38%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+Gradient Boosting Correlated + Log Target:
+R²   (R-squared test):          0.2335
+R²   (R-squared train):         0.9753
+MSE  (Mean Squared Error):      18250343264870.78
+MAPE (Mean Absolute % Error):   40.49%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+Polynomial Regression:
+R²   (R-squared test):          0.2359
+R²   (R-squared train):         0.7193
+MSE  (Mean Squared Error):      18192620273161.73
+MAPE (Mean Absolute % Error):   43.91%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+Linear Regression:              
+R²   (R-squared test):          0.3033
+R²   (R-squared train):         0.5416
+MSE  (Mean Squared Error):      16586756763735.38
+MAPE (Mean Absolute % Error):   45.89%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+Random Forest:
+R²   (R-squared test):          0.3426
+R²   (R-squared train):         0.9324
+MSE  (Mean Squared Error):      15651361048008.02
+MAPE (Mean Absolute % Error):   42.36%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+XGBoost:
+R²   (R-squared test):          0.1324
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Error):      20655895226102.68
+MAPE (Mean Absolute % Error):   46.61%
+
+
+===============================
+FIRSH APPROACH - TOP  10 FEATURES 
+Gradient Boosting:
+R²   (R-squared test):          0.1162
+R²   (R-squared train):         0.9934
+MSE  (Mean Squared Error):      21043753439138.82
+MAPE (Mean Absolute % Error):   49.93%
+
+
+===============================
+FIRSH APPROACH - TOP  10 FEATURES 
+Polynomial Regressiong:
+R²   (R-squared test):          -4.1189
+R²   (R-squared train):         0.8912
+MSE  (Mean Squared Error):      121877601694846.55
+MAPE (Mean Absolute % Error):   77.30%
+
+
+===============================
+FIRSH APPROACH - TOP  10 FEATURES 
+Linear Regression:
+R²   (R-squared test):          0.2845
+R²   (R-squared train):         0.6075
+MSE  (Mean Squared Error):      17036243804633.45
+MAPE (Mean Absolute % Error):   41.10%
+
+
+===============================
+FIRSH APPROACH - TOP  10 FEATURES 
+Random Forest:
+R²   (R-squared test):          0.2023
+R²   (R-squared train):         0.9573
+MSE  (Mean Squared Error):      18993281636184.82
+MAPE (Mean Absolute % Error):   41.61%
+
+
+===============================
+FIRSH APPROACH - TOP  10 FEATURES 
+GXGBoost :
+R²   (R-squared test):          -0.0937
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Error):      26039471182985.89
+MAPE (Mean Absolute % Error):   50.82%
+
+
+===============================
+SECOND APPROACH - TOP  ALL FEATURES 
+Gradient Boosting:
+R²   (R-squared test):          0.1627
+R²   (R-squared train):         0.9975
+MSE  (Mean Squared Error):      19936261469386.47
+MAPE (Mean Absolute % Error):   44.73%
+
+
+===============================
+SECOND APPROACH - TOP  ALL FEATURES 
+Polynomial Regression:
+R²   (R-squared test):          -1162.8503
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Error):      27710397213480312.00
+MAPE (Mean Absolute % Error):   792.85%
+
+
+===============================
+SECOND APPROACH - TOP  ALL FEATURES 
+Linear Regression:
+R²   (R-squared test):          0.1307
+R²   (R-squared train):         0.6878
+MSE  (Mean Squared Error):      20696362484617.75
+MAPE (Mean Absolute % Error):   48.95%
+
+
+===============================
+SECOND APPROACH - TOP  ALL FEATURES 
+Random Forest:
+R²   (R-squared test):          0.3365
+R²   (R-squared train):         0.9534
+MSE  (Mean Squared Error):      15798473800211.39
+MAPE (Mean Absolute % Error):   40.17%
+
+
+===============================
+SECOND APPROACH - TOP  ALL FEATURES 
+Xbooth:
+R²   (R-squared test):          -0.0373
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Error):      24696531534541.34
+MAPE (Mean Absolute % Error):   48.36%
+
+
+===============================
+SECOND APPROACH - TOP 5 FEATURES 
+Gradient Boosting:
+R²   (R-squared test):          -0.0280
+R²   (R-squared train):         0.9906
+MSE  (Mean Squared Error):      24476451038867.46
+MAPE (Mean Absolute % Error):   45.45%
+
+
+===============================
+SECOND APPROACH - TOP  5 FEATURES 
+Polynomial Regression:
+R²   (R-squared test):          -0.3808
+R²   (R-squared train):         0.1448
+MSE  (Mean Squared Error):      32874858594056.36
+MAPE (Mean Absolute % Error):   67.41%
+
+
+===============================
+SECOND APPROACH - TOP  5 FEATURES 
+Linear Regression:
+R²   (R-squared test):          -0.1444
+R²   (R-squared train):         0.4654
+MSE  (Mean Squared Error):      27248076942326.55
+MAPE (Mean Absolute % Error):   44.07%
+
+
+===============================
+SECOND APPROACH - TOP  5 FEATURES 
+Random Forest:
+R²   (R-squared test):          0.0897
+R²   (R-squared train):         0.9560
+MSE  (Mean Squared Error):      21674422744206.38
+MAPE (Mean Absolute % Error):   42.63%
+
+
+===============================
+SECOND APPROACH - TOP  5 FEATURES 
+XGBoost:
+R²   (R-squared test):          -0.1685
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Error):      27820276133929.20
+MAPE (Mean Absolute % Error):   54.77%
+
+
+===============================
+SECOND APPROACH - TOP  10 FEATURES 
+Gradient Boosting:
+R²   (R-squared test):          0.1229
+R²   (R-squared train):         0.9951
+MSE  (Mean Squared Error):      20882556383498.01
+MAPE (Mean Absolute % Error):   43.42%
+
+
+===============================
+SECOND APPROACH - TOP  10 FEATURES 
+Polynomial Regression:
+R²   (R-squared test):          -0.2650
+R²   (R-squared train):         0.3668
+MSE  (Mean Squared Error):      30119589648258.14
+MAPE (Mean Absolute % Error):   61.70%
+
+
+===============================
+SECOND APPROACH - TOP  10 FEATURES 
+Linear Regression:
+R²   (R-squared test):          -0.0266
+R²   (R-squared train):         0.5095
+MSE  (Mean Squared Error):      24441534426507.49
+MAPE (Mean Absolute % Error):   43.01%
+
+
+===============================
+SECOND APPROACH - TOP  10 FEATURES 
+Random Forest:
+R²   (R-squared test):          0.1711
+R²   (R-squared train):         0.9548
+MSE  (Mean Squared Error):      19735600039408.47
+MAPE (Mean Absolute % Error):   42.17%
+
+
+===============================
+SECOND APPROACH - TOP  10 FEATURES 
+XGBoost:
+R²   (R-squared test):          -0.0636
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Error):      25322711644142.72
+MAPE (Mean Absolute % Error):   47.77%
+
+
+===============================
+THIRD APPROACH - ALL FEATURES - Alagnak Only
+Gradient Boosting Evaluation Metrics:
+R²   (R-squared test):          -2.8547
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Erro train):      15602.18
+MSE  (Mean Squared Error test):      6501775721824.50
+MAPE (MAPE train):   0.01%
+MSE  (MAPE test):      73.26
+
+
+===============================
+THIRD APPROACH - ALL FEATURES - Alagnak Only
+Polynomial Regression:
+R²   (R-squared test):          -17970.7745
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Erro train):      0.00
+MSE  (Mean Squared Error test):      30312855750116256.00
+MAPE (MAPE train):   0.00%
+MSE  (MAPE test):      4081.97
+
+
+===============================
+THIRD APPROACH - ALL FEATURES - Alagnak Only
+Linear Regression:
+R²   (R-squared test):          -14.4659
+R²   (R-squared train):         0.9944
+MSE  (Mean Squared Erro train):      19136573635.82
+MSE  (Mean Squared Error test):      26086135136093.02
+MAPE (MAPE train):   5.09%
+MSE  (MAPE test):      146.11
+
+
+===============================
+THIRD APPROACH - ALL FEATURES - Alagnak Only
+Random Forest:
+R²   (R-squared test):          -0.5042
+R²   (R-squared train):         0.9072
+MSE  (Mean Squared Erro train):      318185129666.34
+MSE  (Mean Squared Error test):      2537174996364.19
+MAPE (MAPE train):   21.29%
+MSE  (MAPE test):      45.67
+
+
+===============================
+THIRD APPROACH - ALL FEATURES - Alagnak Only
+Random Forest with Log-Transformed Targett:
+R²   (R-squared test):          -0.2327
+R²   (R-squared train):         0.8588
+MSE  (Mean Squared Erro train):      484158539776.86
+MSE  (Mean Squared Error test):      2079237734047.71
+MAPE (MAPE train):   15.09%
+MSE  (MAPE test):      36.24
+
+
+===============================
+THIRD APPROACH - ALL FEATURES - Alagnak Only
+Random Forest with Log-Transformed Target + GridSearchCV:
+R²   (R-squared test):          -0.2627
+R²   (R-squared train):         0.8646
+MSE  (Mean Squared Erro train):      464348319662.07
+MSE  (Mean Squared Error test):      2129739461766.47
+MAPE (MAPE train):   14.90%
+MSE  (MAPE test):      36.04
+
+
+===============================
+THIRD APPROACH - ALL FEATURES - Alagnak Only
+XGBoost with Log-Transformed Target + GridSearchCV:
+R²   (R-squared test):          -0.6694
+R²   (R-squared train):         0.9860
+MSE  (Mean Squared Erro train):      48003830518.56
+MSE  (Mean Squared Error test):      2815792145695.45
+MAPE (MAPE train):   2.24%
+MSE  (MAPE test):      40.77
+
+
+===============================
+THIRD APPROACH - ALL FEATURES - Alagnak Only
+XGBoost Evaluation Metrics:
+R²   (R-squared test):          -1.5759
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Erro train):      0.14
+MSE  (Mean Squared Error test):      4344716678535.96
+MAPE (MAPE train):   0.00%
+MSE  (MAPE test):      61.22
+
+
+===============================
+THIRD APPROACH - TOP 5 FEATURES - Alagnak Only
+Gradient Boosting Evaluation Metrics:
+R²   (R-squared test):          -3.7741
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Erro train):      2122806.51
+MSE  (Mean Squared Error test):      8052370007648.39
+MAPE (MAPE train):   0.07%
+MSE  (MAPE test):      82.14
+
+
+===============================
+THIRD APPROACH - TOP 5 FEATURES - Alagnak Only
+Polynomial Regression Evaluation:
+R²   (R-squared test):          -41.7728
+R²   (R-squared train):         0.7798
+MSE  (Mean Squared Erro train):      755283357197.73
+MSE  (Mean Squared Error test):      72144516957896.59
+MAPE (MAPE train):   34.71%
+MSE  (MAPE test):      199.48
+
+
+===============================
+THIRD APPROACH - TOP 5 FEATURES - Alagnak Only
+Linear Regression Evaluation:
+R²   (R-squared test):          -1.5759
+R²   (R-squared train):         0.5437
+MSE  (Mean Squared Erro train):      1564930613616.54
+MSE  (Mean Squared Error test):      4344812107847.04
+MAPE (MAPE train):   45.79%
+MSE  (MAPE test):      62.18
+
+
+===============================
+THIRD APPROACH - TOP 5 FEATURES - Alagnak Only
+Random Forest:
+R²   (R-squared test):          -1.2750
+R²   (R-squared train):         0.9078
+MSE  (Mean Squared Erro train):      316226300859.37
+MSE  (Mean Squared Error test):      3837232598785.69
+MAPE (MAPE train):   18.91%
+MSE  (MAPE test):      58.23
+
+
+===============================
+THIRD APPROACH - TOP 5 FEATURES - Alagnak Only
+Random Forest  Log Target:
+R²   (R-squared test):          -0.9710
+R²   (R-squared train):         0.8840
+MSE  (Mean Squared Erro train):      397757731894.56
+MSE  (Mean Squared Error test):      3324487583836.07
+MAPE (MAPE train):   13.72%
+MSE  (MAPE test):      54.17
+
+
+===============================
+THIRD APPROACH - TOP 5 FEATURES - Alagnak Only
+Random Forest + Log-Transformed Target + GridSearchCV :
+R²   (R-squared test):          -0.7854
+R²   (R-squared train):         0.8105
+MSE  (Mean Squared Erro train):      649831816047.50
+MSE  (Mean Squared Error test):      3011438875529.23
+MAPE (MAPE train):   17.14%
+MSE  (MAPE test):      50.99
+
+
+===============================
+THIRD APPROACH - TOP 5 FEATURES - Alagnak Only
+XGBoost :
+R²   (R-squared test):          -3.6951
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Erro train):      0.29
+MSE  (Mean Squared Error test):      7919204683572.06
+MAPE (MAPE train):   0.00%
+MSE  (MAPE test):      82.17
+
+
+===============================
+THIRD APPROACH - TOP 10 FEATURES - Alagnak Only
+Gradient Boosting :
+R²   (R-squared test):          -2.5359
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Erro train):      790957.55
+MSE  (Mean Squared Error test):      5963904879861.98
+MAPE (MAPE train):   0.04%
+MSE  (MAPE test):      73.61
+
+
+===============================
+THIRD APPROACH - TOP 10 FEATURES - Alagnak Only
+Linear Regression :
+R²   (R-squared test):          -0.9679
+R²   (R-squared train):         0.5115
+MSE  (Mean Squared Erro train):      1675306344054.60
+MSE  (Mean Squared Error test):      3319289387160.84
+MAPE (MAPE train):   45.11%
+MSE  (MAPE test):      51.13
+
+
+===============================
+THIRD APPROACH - TOP 10 FEATURES - Alagnak Only
+Polynomial Regression :
+R²   (R-squared test):          -114.1581
+R²   (R-squared train):         0.8513
+MSE  (Mean Squared Erro train):      510058344061.21
+MSE  (Mean Squared Error test):      194236294991931.22
+MAPE (MAPE train):   23.66%
+MSE  (MAPE test):      259.86
+
+
+===============================
+THIRD APPROACH - TOP 10 FEATURES - Alagnak Only
+Linear Regression :
+R²   (R-squared test):          -0.9679
+R²   (R-squared train):         0.5115
+MSE  (Mean Squared Erro train):      1675306344054.60
+MSE  (Mean Squared Error test):      3319289387160.84
+MAPE (MAPE train):   45.11%
+MSE  (MAPE test):      51.13
+
+
+===============================
+THIRD APPROACH - TOP 10 FEATURES - Alagnak Only
+Random Forest :
+R²   (R-squared test):          -0.9224
+R²   (R-squared train):         0.9131
+MSE  (Mean Squared Erro train):      298100666697.26
+MSE  (Mean Squared Error test):      3242429195245.71
+MAPE (MAPE train):   19.70%
+MSE  (MAPE test):      53.73
+
+
+===============================
+THIRD APPROACH - TOP 10 FEATURES - Alagnak Only
+Random Forest with Log-Transformed Target  :
+R²   (R-squared test):          -0.3405
+R²   (R-squared train):         0.8789
+MSE  (Mean Squared Erro train):      415356847287.73
+MSE  (Mean Squared Error test):      2260977569251.44
+MAPE (MAPE train):   13.81%
+MSE  (MAPE test):      42.83
+
+
+===============================
+THIRD APPROACH - TOP 10 FEATURES - Alagnak Only
+Random Forest + Log-Transformed Target + GridSearchCV  :
+R²   (R-squared test):          -0.5752
+R²   (R-squared train):         0.7814
+MSE  (Mean Squared Erro train):      749558640358.46
+MSE  (Mean Squared Error test):      2656905945978.65
+MAPE (MAPE train):   19.53%
+MSE  (MAPE test):      46.67
+
+
+===============================
+THIRD APPROACH - TOP 10 FEATURES - Alagnak Only
+XGBoost  :
+R²   (R-squared test):          -3.8437
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Erro train):      0.13
+MSE  (Mean Squared Error test):      8169792995392.21
+MAPE (MAPE train):   0.00%
+MSE  (MAPE test):      82.54
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+Gradient Boosting:
+R²   (R-squared test):          0.2453
+R²   (R-squared train):         0.9921
+MSE  (Mean Squared Error):      17968063458677.97
+MAPE (Mean Absolute % Error):   48.38%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+Gradient Boosting Correlated + Log Target:
+R²   (R-squared test):          0.2335
+R²   (R-squared train):         0.9753
+MSE  (Mean Squared Error):      18250343264870.78
+MAPE (Mean Absolute % Error):   40.49%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+Polynomial Regression:
+R²   (R-squared test):          0.2359
+R²   (R-squared train):         0.7193
+MSE  (Mean Squared Error):      18192620273161.73
+MAPE (Mean Absolute % Error):   43.91%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+Linear Regression:
+R²   (R-squared test):          0.3033
+R²   (R-squared train):         0.5416
+MSE  (Mean Squared Error):      16586756763735.38
+MAPE (Mean Absolute % Error):   45.89%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+Random Forest:
+R²   (R-squared test):          0.3426
+R²   (R-squared train):         0.9324
+MSE  (Mean Squared Error):      15651361048008.02
+MAPE (Mean Absolute % Error):   42.36%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+XGBoost:
+R²   (R-squared test):          0.1324
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Error):      20655895226102.68
+MAPE (Mean Absolute % Error):   46.61%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+Linear Regression:
+R²   (R-squared test):          0.3033
+R²   (R-squared train):         0.5416
+MSE  (Mean Squared Error):      16586756763735.38
+MAPE (Mean Absolute % Error):   45.89%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+Linear Regression:
+R²   (R-squared test):          0.3033
+R²   (R-squared train):         0.5416
+MSE  (Mean Squared Error):      16586756763735.38
+MAPE (Mean Absolute % Error):   45.89%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+Linear Regression:
+R²   (R-squared test):          0.3033
+R²   (R-squared train):         0.5416
+MSE  (Mean Squared Error):      16586756763735.38
+MAPE (Mean Absolute % Error):   45.89%
