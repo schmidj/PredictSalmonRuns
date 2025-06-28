@@ -622,3 +622,12 @@ R²   (R-squared test):          0.3033
 R²   (R-squared train):         0.5416
 MSE  (Mean Squared Error):      16586756763735.38
 MAPE (Mean Absolute % Error):   45.89%
+
+
+===============================
+FIRSH APPROACH - TOP  5 FEATURES 
+XGBoost:
+R²   (R-squared test):          0.1324
+R²   (R-squared train):         1.0000
+MSE  (Mean Squared Error):      20655895226102.68
+MAPE (Mean Absolute % Error):   46.61%
