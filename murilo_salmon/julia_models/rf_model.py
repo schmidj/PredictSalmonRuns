@@ -13,8 +13,6 @@ from xgboost import XGBRegressor
 
 
 
-
-
 def train_and_apply_rf_with_tuning(model, train_df, test_df, topk_feat = 0, target_col="Total_Returns_NextYear"):
     """
     Tunes and applies RandomForestRegressor using GridSearchCV and optionally selects a subset of featues.
@@ -135,7 +133,6 @@ def train_and_apply_rf_with_tuning(model, train_df, test_df, topk_feat = 0, targ
     train_results_df["Predicted"] = predictions_train
     train_results_df["Actual"] = y_train.values
 
-
     def compute_group_metrics(df):
         r2 = r2_score(df["Actual"], df["Predicted"])
         mse = mean_squared_error(df["Actual"], df["Predicted"])
@@ -158,8 +155,6 @@ def train_and_apply_rf_with_tuning(model, train_df, test_df, topk_feat = 0, targ
         lambda g: compute_group_metrics(g.drop(columns="River_Name"))
     ).reset_index()
 
-
-
     # Create timeline DataFrames for plots
     timeline_train_df = train_df[["River_Name", "Year"]].copy()
     timeline_train_df["Predicted"] = predictions_train
@@ -168,6 +163,7 @@ def train_and_apply_rf_with_tuning(model, train_df, test_df, topk_feat = 0, targ
     timeline_test_df = test_df[["River_Name", "Year"]].copy()
     timeline_test_df["Predicted"] = predictions
     timeline_test_df["Actual"] = y_test.values
+ 
 
     return {
         "R2_train": r2_train,
@@ -184,5 +180,7 @@ def train_and_apply_rf_with_tuning(model, train_df, test_df, topk_feat = 0, targ
         "Metrics_by_System_Test": system_metrics_test,
         "Metrics_by_River_Test": river_metrics_test,
         "Metrics_by_System_Train": system_metrics_train,
-        "Metrics_by_River_Train": river_metrics_train
+        "Metrics_by_River_Train": river_metrics_train,
+        "Selected_Feature_Names": list(X_train.columns)
+
     }
