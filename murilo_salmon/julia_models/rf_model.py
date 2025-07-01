@@ -12,7 +12,6 @@ from sklearn.preprocessing import PolynomialFeatures
 from xgboost import XGBRegressor
 
 
-
 def train_and_apply_rf_with_tuning(model, train_df, test_df, topk_feat = 0, target_col="Total_Returns_NextYear"):
     """
     Tunes and applies RandomForestRegressor using GridSearchCV and optionally selects a subset of featues.
