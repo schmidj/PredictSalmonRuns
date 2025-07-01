@@ -49,6 +49,8 @@ def train_and_apply_with_tuning(model, train_df, test_df, topk_feat = 0, target_
     print("Selected features:")
     print(X_train.columns)
 
+    best_params = {} 
+
     if (model == "RF"): # RandomForestRegressor
         param_grid = {
             'n_estimators': [100, 200],
@@ -59,6 +61,7 @@ def train_and_apply_with_tuning(model, train_df, test_df, topk_feat = 0, target_
         base_model = RandomForestRegressor(random_state=42)
         grid_search = GridSearchCV(base_model, param_grid, cv=5, scoring='neg_mean_squared_error', n_jobs=-1)
         grid_search.fit(X_train, y_train)
+        best_params = grid_search.best_params_
 
     elif (model == "GBRT"): # GradientBoostingRegressor
         param_grid = {
@@ -70,6 +73,7 @@ def train_and_apply_with_tuning(model, train_df, test_df, topk_feat = 0, target_
         base_model = HistGradientBoostingRegressor(random_state=42)
         grid_search = GridSearchCV(base_model, param_grid, cv=5, scoring='neg_mean_squared_error', n_jobs=-1)
         grid_search.fit(X_train, y_train)
+        best_params = grid_search.best_params_
 
     elif model == "XGB": # XGBRegressor
         param_grid = {
@@ -80,6 +84,7 @@ def train_and_apply_with_tuning(model, train_df, test_df, topk_feat = 0, target_
         base_model = XGBRegressor(random_state=42, verbosity=0)
         grid_search = GridSearchCV(base_model, param_grid, cv=5, scoring='neg_mean_squared_error', n_jobs=-1)
         grid_search.fit(X_train, y_train)
+        best_params = grid_search.best_params_
 
     elif model == "LR": # LinearRegression
         param_grid = {
@@ -89,6 +94,7 @@ def train_and_apply_with_tuning(model, train_df, test_df, topk_feat = 0, target_
         base_model = LinearRegression()
         grid_search = GridSearchCV(base_model, param_grid, cv=5, scoring='neg_mean_squared_error', n_jobs=-1)
         grid_search.fit(X_train, y_train)
+        best_params = grid_search.best_params_
 
     elif model == "PR": # Polynomial Regression
         pipeline = make_pipeline(PolynomialFeatures(degree=2, include_bias=False), LinearRegression())
@@ -182,5 +188,42 @@ def train_and_apply_with_tuning(model, train_df, test_df, topk_feat = 0, target_
         "Metrics_by_River_Test": river_metrics_test,
         "Metrics_by_System_Train": system_metrics_train,
         "Metrics_by_River_Train": river_metrics_train,
-        "Selected_Feature_Names": list(X_train.columns)
+        "Selected_Feature_Names": list(X_train.columns),
+        "Hyperparameters": best_params,
     }
+
+def retrain_model_with_best_params(model_type, best_params, full_train_df, prediction_df, selected_features, river_name, target_col="Total_Returns_NextYear"):
+    X_train = full_train_df[selected_features]
+    y_train = full_train_df[target_col]
+    X_test = prediction_df[selected_features]
+
+    if model_type == "RF":
+        model = RandomForestRegressor(random_state=42, **best_params)
+    elif model_type == "GBRT":
+        model = HistGradientBoostingRegressor(random_state=42, **best_params)
+    elif model_type == "XGB":
+        model = XGBRegressor(random_state=42, verbosity=0, **best_params)
+    elif model_type == "LR":
+        model = LinearRegression(**best_params)
+    elif model_type == "PR":
+        model = make_pipeline(PolynomialFeatures(degree=2, include_bias=False), LinearRegression())
+    else:
+        raise ValueError(f"Unsupported model type for retraining: {model_type}")
+
+    model.fit(X_train, y_train)
+    predictions_retro = model.predict(X_train)
+    predictions = model.predict(X_test)
+
+    # Extract retro predictions for years 2020 to 2024
+    if "Year" in full_train_df.columns:
+        retro_df = full_train_df.copy()
+        retro_df["Predicted_Returns"] = predictions_retro
+
+        # Filter for years and river name
+        retro_df_filtered = retro_df[retro_df["Year"].between(2019, 2024)]
+        retro_df_filtered = retro_df_filtered[retro_df_filtered["River_Name"] == river_name]
+
+        retro_df_filtered = retro_df_filtered[["Year", "Predicted_Returns"]].reset_index(drop=True)
+    else:
+        retro_df_filtered = pd.DataFrame()
+    return predictions, retro_df_filtered
