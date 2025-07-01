@@ -13,7 +13,7 @@ from xgboost import XGBRegressor
 
 
 
-def train_and_apply_rf_with_tuning(model, train_df, test_df, topk_feat = 0, target_col="Total_Returns_NextYear"):
+def train_and_apply_with_tuning(model, train_df, test_df, topk_feat = 0, target_col="Total_Returns_NextYear"):
     """
     Tunes and applies RandomForestRegressor using GridSearchCV and optionally selects a subset of featues.
 
@@ -181,5 +181,6 @@ def train_and_apply_rf_with_tuning(model, train_df, test_df, topk_feat = 0, targ
         "Metrics_by_System_Test": system_metrics_test,
         "Metrics_by_River_Test": river_metrics_test,
         "Metrics_by_System_Train": system_metrics_train,
-        "Metrics_by_River_Train": river_metrics_train
+        "Metrics_by_River_Train": river_metrics_train,
+        "Selected_Feature_Names": list(X_train.columns)
     }
